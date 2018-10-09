@@ -65,5 +65,45 @@ public class BoarHat {
       // }
       return;
   }
+
+  private int[] initialSol() {
+      int[] solution;
+      int iCent = 0;
+      int iCli = 0;
+      double prodLeft, prodInit = centrals.get(0).getProduccion();
+      while (true) {
+          if (prodLeft >= (prodInit*0.75)) {
+              if (iCent < centrals.size()-1) {
+                  iCent++;
+                  prodLeft = prodInit = centrals.get(iCent).getProduccion();
+              } else {
+                  // TODO: WHAT IF WE CANT SUPPLY ALL THE CUSTOMERS
+                  break;
+              }
+          } else {
+              if (clientes.get(iCli).getConsumo() <= prodLeft) {
+                  solution.add(iCent);
+                  prodLeft -= clientes.get(iCli).getConsumo();
+                  if (iCli < clientes.size()-1) {
+                      iCli++;
+                  } else {
+                      //end
+                      break;
+                  }
+              } else {
+                  if (iCent < centrals.size()-1) {
+                      iCent++;
+                      prodLeft = prodInit = centrals.get(iCent).getProduccion();
+                  } else {
+                      // TODO: WHAT IF WE CANT SUPPLY ALL THE CUSTOMERS
+                      break;
+                  }
+              }
+          }
+
+      }
+
+      return solution;
+  }
  
 }
