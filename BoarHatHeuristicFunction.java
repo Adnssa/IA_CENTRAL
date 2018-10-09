@@ -13,8 +13,8 @@ public class BoarHatHeuristicFunction implements HeuristicFunction  {
 
    double sum = 0;
    for(int i = 0; i < board.getNCentrals(); i++){
-       double aux = log(board.alturaOcupada(i)/board.alturaTotal(i));
-       sum+= aux*board.alturaOcupada(i)/board.alturaTotal(i);
+       double aux = Math.log(board.prodOcupada(i)/board.prodTotal(i));
+       sum+= aux*board.prodOcupada(i)/board.prodTotal(i);
    }
 
 
