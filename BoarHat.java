@@ -251,4 +251,35 @@ public class BoarHat {
     }
   }
 
+  public double getBeneficis(){
+    try{
+    double sum = 0;
+    for(int i = 0; i < clients.length; i++){
+      int tipo = clientes.get(i).getTipo();
+      int garant = clientes.get(i).getContrato();
+      if(clientAssignat(i)){
+        if(garant == 0){
+          sum+=clientes.get(i).getConsumo()*VEnergia.getTarifaClienteGarantizada(tipo);
+        }
+        else {
+          sum+=clientes.get(i).getConsumo()*VEnergia.getTarifaClienteNoGarantizada(tipo);
+        }
+      }
+      else {
+        sum-=clientes.get(i).getConsumo()*VEnergia.getTarifaClientePenalizacion(tipo);
+      }
+    }
+    for(int i = 0; i < prodLeft.length; i++){
+      int tipo = centrals.get(i).getTipo();
+      if(prodLeft[i] != centrals.get(i).getProduccion()){
+        sum-=(centrals.get(i).getProduccion()*VEnergia.getCosteProduccionMW(tipo) + VEnergia.getCosteMarcha(tipo) + VEnergia.getCosteParada(tipo));
+      }
+    }
+    return sum;
+  } catch(java.lang.Exception e) {
+      System.out.println(e);
+      return 0;
+    }
+  }
+
 }

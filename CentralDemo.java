@@ -26,6 +26,7 @@ public class CentralDemo {
         int seedCli = 1234;
 
         BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
+        System.out.println("Beneficis = " + TSPB.getBeneficis());
         TSPHillClimbingSearch(TSPB);
         TSPSimulatedAnnealingSearch(TSPB);
     }
@@ -38,7 +39,6 @@ public class CentralDemo {
             Problem problem =  new Problem(TSPB, new BoarHatSuccessorFunction(), new BoarHatGoalTest(),new BoarHatHeuristicFunction());
             Search search =  new HillClimbingSearch();
             SearchAgent agent = new SearchAgent(problem,search);
-
             System.out.println();
             printActions(agent.getActions());
             printInstrumentation(agent.getInstrumentation());

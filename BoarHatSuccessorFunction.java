@@ -24,6 +24,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
                 double    v = TSPHF.getHeuristicValue(newBoard);
                 String S = BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
                 retVal.add(new Successor(S, newBoard));
+                //System.out.println("Beneficis = " + board.getBeneficis());
               }
             }
         }
