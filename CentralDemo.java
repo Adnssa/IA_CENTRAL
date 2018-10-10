@@ -21,9 +21,10 @@ public class CentralDemo {
         int [] percent  = {5, 10, 25};
         int seedCent = 1234;
         int ncli = 1000;
-        double [] propc  = {0.25, 0.30, 0.45};
+        double [] propc  = {0.25, 0.3, 0.45};
         double propg = 0.75;
         int seedCli = 1234;
+
         BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
         TSPHillClimbingSearch(TSPB);
         TSPSimulatedAnnealingSearch(TSPB);

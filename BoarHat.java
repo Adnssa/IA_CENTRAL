@@ -118,32 +118,30 @@ public class BoarHat {
     //INIT Centrals
     centrals = new Centrales(percent, seedCent);
     prodLeft = new double[centrals.size()];
-    for(int i = 0; i < centrals.size(); i++){ //prodLeft[i] == produccio total central
+    for(int i = 0; i < centrals.size(); i++){
       prodLeft[i] = centrals.get(i).getProduccion();
-      }
-    } catch(java.lang.Exception e) {
-        System.out.println("Excepcio Init Central");
     }
     //INIT CLIENTS
-
-    try{
     clientes = new Clientes(ncli, propc, propg, seedCli);
     clients = new int[clientes.size()];
     int cent = 0;
     int cli = 0;
-    while (cli < clients.length || cent < centrals.size()){
+    boolean run = true;
+    while (run){
         double prod = produccioReal(cent, cli);
-        if(prod <= prodLeft[cent]) { //Posem el client a la central
+        if(prod < prodLeft[cent]) { //Posem el client a la central
           clients[cli] = cent;
           prodLeft[cent]-=prod;
           cli++;
         }
         else cent ++;
+        if(cli >= clients.length) run = false;
+        else if (cent >= prodLeft.length) run = false;
+        else if (cent >= centrals.size()) run = false;
 
     }
-
     } catch(java.lang.Exception e) {
-        System.out.println("Excepcio Init Cli");
+        System.out.println(e);
     }
 
   }
