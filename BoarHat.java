@@ -127,11 +127,33 @@ public class BoarHat {
     int cent = 0;
     int cli = 0;
     boolean run = true;
-    while (run){
+    while (run){ //Assignem tots els garantitzats
         double prod = produccioReal(cent, cli);
         if(prod < prodLeft[cent]) { //Posem el client a la central
+          if(clientes.get(cli).getContrato() == 0){
           clients[cli] = cent;
           prodLeft[cent]-=prod;
+          }
+          else {
+            clients[cli] = prodLeft.length + 1; //Als que no podem servir (de moment els no garantitzats els hi assignem una central que no existeix)
+          }
+          cli++;
+        }
+        else cent ++;
+        if(cli >= clients.length) run = false;
+        else if (cent >= prodLeft.length) run = false;
+        else if (cent >= centrals.size()) run = false;
+
+    }
+    cent = cli = 0;
+    run = true;
+    while (run){ //Assignem tots els possibles no garantitzats
+        double prod = produccioReal(cent, cli);
+        if(prod < prodLeft[cent]) { //Posem el client a la central
+          if(!clientAssignat(cli)) {
+          clients[cli] = cent;
+          prodLeft[cent]-=prod;
+          }
           cli++;
         }
         else cent ++;
@@ -163,6 +185,11 @@ public class BoarHat {
 
     }
 
+  }
+
+  public boolean clientAssignat(int cli){
+    if(clients[cli] == prodLeft.length + 1) return false;
+    else return true;
   }
 
   public int getNCentrals(){
@@ -208,12 +235,20 @@ public class BoarHat {
 
   public boolean move (int cli, int cent){
     double prod = produccioReal(cent, cli);
-    int centPre = clients[cli];
-    if(prodLeft[cent] < prod) return false;
-    prodLeft[centPre]+= prod;
-    prodLeft[cent]-= prod;
-    clients[cli] = cent;
-    return true;
+    if(clientAssignat(cli)){
+      int centPre = clients[cli];
+      if(prodLeft[cent] < prod) return false;
+      prodLeft[centPre]+= prod;
+      prodLeft[cent]-= prod;
+      clients[cli] = cent;
+      return true;
+    }
+    else {
+      if(prodLeft[cent] < prod) return false;
+      prodLeft[cent]-= prod;
+      clients[cli] = cent;
+      return true;
+    }
   }
 
 }
