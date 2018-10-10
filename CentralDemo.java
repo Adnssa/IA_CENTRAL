@@ -9,33 +9,44 @@ import aima.search.informed.HillClimbingSearch;
 import aima.search.informed.SimulatedAnnealingSearch;
 
 import IA.Energia.Centrales;
+import IA.Energia.Centrales;
+import IA.Energia.Central;
+import IA.Energia.Clientes;
+import IA.Energia.Cliente;
+import IA.Energia.VEnergia;
 
 public class CentralDemo {
-    
+
     public static void main(String[] args){
-        BoarHat TSPB=new BoarHat(30);
+        int [] percent  = {5, 10, 25};
+        int seedCent = 1234;
+        int ncli = 1000;
+        double [] propc  = {0.25, 0.30, 0.45};
+        double propg = 0.75;
+        int seedCli = 1234;
+        BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
         TSPHillClimbingSearch(TSPB);
         TSPSimulatedAnnealingSearch(TSPB);
     }
-    
+
     private static void TSPHillClimbingSearch(BoarHat TSPB) {
         System.out.println("\nTSP HillClimbing  -->");
-        return;
-        /*
+
+
         try {
-            Problem problem =  new Problem(TSPB,new ProbTSPSuccessorFunction(), new ProbTSPGoalTest(),new ProbTSPHeuristicFunction());
+            Problem problem =  new Problem(TSPB, new BoarHatSuccessorFunction(), new BoarHatGoalTest(),new BoarHatHeuristicFunction());
             Search search =  new HillClimbingSearch();
             SearchAgent agent = new SearchAgent(problem,search);
-            
+
             System.out.println();
             printActions(agent.getActions());
             printInstrumentation(agent.getInstrumentation());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
+
     }
-    
+
     private static void TSPSimulatedAnnealingSearch(BoarHat TSPB) {
         System.out.println("\nTSP Simulated Annealing  -->");
         return;
@@ -46,7 +57,7 @@ public class CentralDemo {
             SimulatedAnnealingSearch search =  new SimulatedAnnealingSearch(2000,100,5,0.001);
             //search.traceOn();
             SearchAgent agent = new SearchAgent(problem,search);
-            
+
             System.out.println();
             printActions(agent.getActions());
             printInstrumentation(agent.getInstrumentation());
@@ -55,7 +66,7 @@ public class CentralDemo {
         }
         */
     }
-    
+
     private static void printInstrumentation(Properties properties) {
         Iterator keys = properties.keySet().iterator();
         while (keys.hasNext()) {
@@ -63,17 +74,15 @@ public class CentralDemo {
             String property = properties.getProperty(key);
             System.out.println(key + " : " + property);
         }
-        
+
     }
-    
+
     private static void printActions(List actions) {
         for (int i = 0; i < actions.size(); i++) {
             String action = (String) actions.get(i);
             System.out.println(action);
         }
     }
-    
-    
+
+
 }
-
-

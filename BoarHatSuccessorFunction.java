@@ -16,14 +16,15 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
         // No permitimos intercambiar la primera ciudad
         for (int i = 0; i < board.getNClients(); i++) {
             for (int j = 0; j < board.getNCentrals(); j++) {
-                BoarHat newBoard = new BoarHat(parametres);
+                BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft());
 
-                newBoard.move(i, j); //Moure el client i a la central j.
+                boolean moure = newBoard.move(i, j); //Moure el client i a la central j.
 
+                if(moure) {
                 double    v = TSPHF.getHeuristicValue(newBoard);
                 String S = BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
-
                 retVal.add(new Successor(S, newBoard));
+              }
             }
         }
 

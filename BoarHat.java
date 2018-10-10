@@ -38,9 +38,9 @@ public class BoarHat {
    *
    * @param [in] nc Numero de ciudades
    */
-  public BoarHat(int nc) {
+  /*public BoarHat(int nc) {
 
-      int[] percent = {8, 1, 1};
+      int [] percent = {8, 1, 1};
       int ncli = 3;
       double[] propc = {0.3, 0.3, 0.4};
       double propg = 0.1;
@@ -70,6 +70,7 @@ public class BoarHat {
       // }
       return;
   }
+  */
 
   /*private int[] initialSol() {
       int [] solution;
@@ -111,6 +112,61 @@ public class BoarHat {
       return solution;
   }
 */
+
+  public BoarHat(int [] percent, int seedCent, int ncli, double [] propc, double propg, int seedCli){
+    try{
+    //INIT Centrals
+    centrals = new Centrales(percent, seedCent);
+    prodLeft = new double[centrals.size()];
+    for(int i = 0; i < centrals.size(); i++){ //prodLeft[i] == produccio total central
+      prodLeft[i] = centrals.get(i).getProduccion();
+      }
+    } catch(java.lang.Exception e) {
+        System.out.println("Excepcio Init Central");
+    }
+    //INIT CLIENTS
+
+    try{
+    clientes = new Clientes(ncli, propc, propg, seedCli);
+    clients = new int[clientes.size()];
+    int cent = 0;
+    int cli = 0;
+    while (cli < clients.length || cent < centrals.size()){
+        double prod = produccioReal(cent, cli);
+        if(prod <= prodLeft[cent]) { //Posem el client a la central
+          clients[cli] = cent;
+          prodLeft[cent]-=prod;
+          cli++;
+        }
+        else cent ++;
+
+    }
+
+    } catch(java.lang.Exception e) {
+        System.out.println("Excepcio Init Cli");
+    }
+
+  }
+
+
+  public BoarHat(int [] clients2, double [] prodLeft2){ //Constructora per generar successors
+
+      try{
+      clients = new int[clients2.length];
+      prodLeft = new double[prodLeft2.length];
+      for(int i = 0; i < clients2.length; i++){
+        clients[i] = clients2[i];
+      }
+      for(int i = 0; i < prodLeft2.length; i++){
+        prodLeft[i] = prodLeft2[i];
+      }
+    }catch(java.lang.Exception e) {
+        System.out.println("Excepcio Successor");
+
+    }
+
+  }
+
   public int getNCentrals(){
     return centrals.size();
   }
@@ -143,6 +199,23 @@ public class BoarHat {
       double dist = getDistancia(cent, cli);
       demanda += VEnergia.getPerdida(dist)*demanda;
       return demanda;
+  }
+  public int [] getClients(){
+    return clients;
+  }
+
+  public double [] getProdLeft(){
+    return prodLeft;
+  }
+
+  public boolean move (int cli, int cent){
+    double prod = produccioReal(cent, cli);
+    int centPre = clients[cli];
+    if(prodLeft[cent] < prod) return false;
+    prodLeft[centPre]+= prod;
+    prodLeft[cent]-= prod;
+    clients[cli] = cent;
+    return true;
   }
 
 }
