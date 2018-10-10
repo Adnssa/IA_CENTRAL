@@ -26,7 +26,7 @@ public class CentralDemo {
         int seedCli = 1234;
 
         BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
-        System.out.println("Beneficis = " + TSPB.getBeneficis());
+        System.out.println("Beneficis = " + TSPB.getBeneficis() + "Clients No assignats = " + TSPB.clientsNoAssignats());
         TSPHillClimbingSearch(TSPB);
         TSPSimulatedAnnealingSearch(TSPB);
     }

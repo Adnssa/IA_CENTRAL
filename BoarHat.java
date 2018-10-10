@@ -282,4 +282,12 @@ public class BoarHat {
     }
   }
 
+  public int clientsNoAssignats(){
+    int sum = 0;
+    for(int i = 0; i < clients.length; i++){
+      if(clients[i] == prodLeft.length + 1) ++sum;
+    }
+    return sum;
+  }
+
 }
