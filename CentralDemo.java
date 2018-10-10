@@ -33,8 +33,6 @@ public class CentralDemo {
 
     private static void TSPHillClimbingSearch(BoarHat TSPB) {
         System.out.println("\nTSP HillClimbing  -->");
-
-
         try {
             Problem problem =  new Problem(TSPB, new BoarHatSuccessorFunction(), new BoarHatGoalTest(),new BoarHatHeuristicFunction());
             Search search =  new HillClimbingSearch();
@@ -51,10 +49,8 @@ public class CentralDemo {
     private static void TSPSimulatedAnnealingSearch(BoarHat TSPB) {
         System.out.println("\nTSP Simulated Annealing  -->");
         return;
-
-        /*
-        try {
-            Problem problem =  new Problem(TSPB,new ProbTSPSuccessorFunctionSA(), new ProbTSPGoalTest(),new ProbTSPHeuristicFunction());
+        /*try {
+            Problem problem =  new Problem(TSPB, new BoarHatSuccessorFunctionSA(), new BoarHatGoalTest(),new BoarHatHeuristicFunction());
             SimulatedAnnealingSearch search =  new SimulatedAnnealingSearch(2000,100,5,0.001);
             //search.traceOn();
             SearchAgent agent = new SearchAgent(problem,search);
@@ -64,8 +60,8 @@ public class CentralDemo {
             printInstrumentation(agent.getInstrumentation());
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        */
+        }*/
+
     }
 
     private static void printInstrumentation(Properties properties) {
