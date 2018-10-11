@@ -29,89 +29,8 @@ public class BoarHat {
   // [centralId] -> prod|null
   private double[] prodLeft;
 
-  /// Distancias entre las ciudades
-  //private int [][] dist;
+  public double valorHeuristic;
 
-  /*!\brief Genera una instancia del problema del TSP
-   *
-   * Crea una nueva instancia del problema del viajante de comercion con nc ciudades
-   *
-   * @param [in] nc Numero de ciudades
-   */
-  /*public BoarHat(int nc) {
-
-      int [] percent = {8, 1, 1};
-      int ncli = 3;
-      double[] propc = {0.3, 0.3, 0.4};
-      double propg = 0.1;
-      int seed = 10;
-
-      try {
-          // INIT CENTRALS
-          centrals = new Centrales(percent, seed);
-          prodLeft = new double[centrals.size()];
-          for(int i = 0; i < centrals.size(); i++){ //prodLeft[i] == produccio total central
-            prodLeft[i] = centrals.get(i).getProduccion();
-          }
-          System.out.println(centrals);
-          System.out.println(centrals.get(0).getTipo());
-          // INIT CLIENTS
-          clientes = new Clientes(ncli, propc, propg, seed);
-          System.out.println(clientes);
-      } catch(java.lang.Exception e) {
-          System.out.println("Too Little Centrals");
-          int[] centralssss = {1};
-      }
-
-      // if (centrals == null) {
-      //     System.out.println("Empty");
-      // } else {
-      //     System.out.println(centrals);
-      // }
-      return;
-  }
-  */
-
-  /*private int[] initialSol() {
-      int [] solution;
-      int iCent = 0;
-      int iCli = 0;
-      double prodLeft, prodInit = centrals.get(0).getProduccion();
-      while (true) {
-          if (prodLeft >= (prodInit*0.75)) {
-              if (iCent < centrals.size()-1) {
-                  iCent++;
-                  prodLeft = prodInit = centrals.get(iCent).getProduccion();
-              } else {
-                  // TODO: WHAT IF WE CANT SUPPLY ALL THE CUSTOMERS
-                  break;
-              }
-          } else {
-              if (clientes.get(iCli).getConsumo() <= prodLeft) {
-                  solution.add(iCent);
-                  prodLeft -= clientes.get(iCli).getConsumo();
-                  if (iCli < clientes.size()-1) {
-                      iCli++;
-                  } else {
-                      //end
-                      break;
-                  }
-              } else {
-                  if (iCent < centrals.size()-1) {
-                      iCent++;
-                      prodLeft = prodInit = centrals.get(iCent).getProduccion();
-                  } else {
-                      // TODO: WHAT IF WE CANT SUPPLY ALL THE CUSTOMERS
-                      break;
-                  }
-              }
-          }
-
-      }
-
-      return solution;
-  }
-*/
 
   public BoarHat(int [] percent, int seedCent, int ncli, double [] propc, double propg, int seedCli){
     try{
@@ -162,6 +81,8 @@ public class BoarHat {
         else if (cent >= centrals.size()) run = false;
 
     }
+   
+    valorHeuristic = getValue();
     } catch(java.lang.Exception e) {
         System.out.println(e);
     }
@@ -289,5 +210,32 @@ public class BoarHat {
     }
     return sum;
   }
+  
+  public double getValue(){
+  double sum = 0;
+   for(int i = 0; i < getNCentrals(); i++){
+       double aux = Math.log(prodOcupada(i)/prodTotal(i));
+       sum-= aux*prodOcupada(i)/prodTotal(i);
+       //sum+=Math.pow(board.prodTotal(i) - board.prodOcupada(i),2);
+   }
+   //sum = -board.getBeneficis();
 
-}
+   return sum;
+   }
+   public void getCambio(int pre, int post){
+        double aux = Math.log(prodOcupada(pre)/prodTotal(pre));
+       aux = aux*prodOcupada(pre)/prodTotal(pre);
+       
+       double aux2 = Math.log(prodOcupada(post)/prodTotal(post));
+       aux2 = aux2*prodOcupada(post)/prodTotal(post);
+       
+       valorHeuristic = valorHeuristic + aux - aux2;
+       return;
+   }
+   
+   public double getValueHeuristic(){
+        return valorHeuristic;
+   }
+  }
+
+

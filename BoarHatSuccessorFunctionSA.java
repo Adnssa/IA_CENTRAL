@@ -28,17 +28,17 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
       BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft());
 
       boolean moure = newBoard.move(i,j);
-      while(!moure){
+      /*while(!moure){
         do{
                j=myRandom.nextInt(board.getNCentrals());
         } while (i==j);
         
         moure = newBoard.move(i,j);
-      }
+      }*/
    //    double   v = TSPHF.getHeuristicValue(newBoard);
    //    String S = new String( i +"|" + j );
 
-       retVal.add(new Successor("", newBoard));
+       if(moure)retVal.add(new Successor("", newBoard));
 
       return retVal;
     }

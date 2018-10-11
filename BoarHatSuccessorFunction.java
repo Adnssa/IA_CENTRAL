@@ -17,7 +17,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
         for (int i = 0; i < board.getNClients(); i++) {
             for (int j = 0; j < board.getNCentrals(); j++) {
                 BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft());
-
+                
                 boolean moure = newBoard.move(i, j); //Moure el client i a la central j.
 
                 if(moure) {
