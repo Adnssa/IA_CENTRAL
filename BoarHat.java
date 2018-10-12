@@ -107,7 +107,7 @@ public class BoarHat {
   public double ProduccioLeft(){
     double produccioLeft = 0;
     for(int i = 0; i < prodLeft.length; i++){
-      produccioLeft += prodLeft[i];
+      produccioLeft += (centrals.get(i).getProduccion() - prodLeft[i]);
     }
     return produccioLeft;
   }
@@ -155,7 +155,7 @@ public class BoarHat {
   }
 
   public double getDistancia(int cent, int cli){
-      int centX, centY, cliX, cliY;
+      double centX, centY, cliX, cliY;
       centX = centrals.get(cent).getCoordX();
       centY = centrals.get(cent).getCoordY();
       cliX = clientes.get(cli).getCoordX();
@@ -168,7 +168,7 @@ public class BoarHat {
   public double produccioReal(int cent, int cli){
       double demanda = clientes.get(cli).getConsumo();
       double dist = getDistancia(cent, cli);
-      demanda += VEnergia.getPerdida(dist)*demanda;
+      demanda = demanda + VEnergia.getPerdida(dist)*demanda;
       return demanda;
   }
   public int [] getClients(){
@@ -204,8 +204,35 @@ public class BoarHat {
   public boolean swap(int cli1, int cli2){
     int cent1 = clients[cli1];
     int cent2 = clients[cli2];
+    if( !clientAssignat(cli1) && !clientAssignat(cli2)) return false;
     if( clientes.get(cli1).getContrato() == 0 && !clientAssignat(cli2)) return false;
     if( clientes.get(cli2).getContrato() == 0 && !clientAssignat(cli1)) return false;
+    if(!clientAssignat(cli1)){
+        double prodPre1 = produccioReal(cent2, cli2);
+        double prodR1 = produccioReal(cent2, cli1);
+        prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre1;
+        clients[cli1] = cent2;
+        clients[cli2] = cent1;
+        return true;
+    }
+    if(!clientAssignat(cli2)){
+        double prodPre1 = produccioReal(cent1, cli1);
+        double prodR1 = produccioReal(cent1, cli2);
+        prodLeft[cent1] = prodLeft[cent1] - prodR1 + prodPre1;
+        clients[cli1] = cent2;
+        clients[cli2] = cent1;
+        return true;
+    }
+    double prodR1 = produccioReal(cent2, cli1);
+    double prodR2 = produccioReal(cent1, cli2);
+    double prodPre1 = produccioReal(cent1, cli1);
+    double prodPre2 = produccioReal(cent2, cli2);
+    if(prodR1 > prodLeft[cent2] + prodPre2) return false;
+    if(prodR2 > prodLeft[cent1] + prodPre1) return false;
+    clients[cli1] = cent2;
+    clients[cli2] = cent1;
+    prodLeft[cent1] = prodLeft[cent1] - prodR2 + prodPre1;
+    prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre2;
     return true;
   }
 
