@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
     @SuppressWarnings("unchecked")
-    public List getSuccessors(Object aState) {
+    public List getSuccessors(Object aState){
         ArrayList                retVal = new ArrayList();
         BoarHat             board  = (BoarHat) aState;
         BoarHatHeuristicFunction TSPHF  = new BoarHatHeuristicFunction();
@@ -25,14 +25,14 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
        } while (i==j);
 
 
-      BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft());
+      BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
 
       boolean moure = newBoard.move(i,j);
       /*while(!moure){
         do{
                j=myRandom.nextInt(board.getNCentrals());
         } while (i==j);
-        
+
         moure = newBoard.move(i,j);
       }*/
    //    double   v = TSPHF.getHeuristicValue(newBoard);

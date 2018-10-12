@@ -11,7 +11,7 @@ public class BoarHatHeuristicFunction implements HeuristicFunction  {
   public double getHeuristicValue(Object state) {
    BoarHat board=(BoarHat)state;
 
-   double sum = board.getValue();
+   double sum = -board.beneficis();
    return sum;
   }
 

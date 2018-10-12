@@ -29,7 +29,7 @@ public class BoarHat {
   // [centralId] -> prod|null
   private double[] prodLeft;
 
-  public double valorHeuristic;
+  private double valorHeuristic, beneficis;
 
 
   public BoarHat(int [] percent, int seedCent, int ncli, double [] propc, double propg, int seedCli){
@@ -48,7 +48,7 @@ public class BoarHat {
     boolean run = true;
     while (run){ //Assignem tots els garantitzats
         double prod = produccioReal(cent, cli);
-        if(prod < prodLeft[cent]) { //Posem el client a la central
+        if(prod < prodLeft[cent]*0.25) { //Posem el client a la central
           if(clientes.get(cli).getContrato() == 0){
           clients[cli] = cent;
           prodLeft[cent]-=prod;
@@ -68,7 +68,7 @@ public class BoarHat {
     run = true;
     while (run){ //Assignem tots els possibles no garantitzats
         double prod = produccioReal(cent, cli);
-        if(prod < prodLeft[cent]) { //Posem el client a la central
+        if(prod < prodLeft[cent]*0.5) { //Posem el client a la central
           if(!clientAssignat(cli)) {
           clients[cli] = cent;
           prodLeft[cent]-=prod;
@@ -81,18 +81,49 @@ public class BoarHat {
         else if (cent >= centrals.size()) run = false;
 
     }
-   
+    for(int i = 0; i < prodLeft.length; i++){
+      //System.out.println("Central " + i + " Left " + prodLeft[i] + " Total " + centrals.get(i).getProduccion());
+    }
+    double consum = consumTotal();
+    double produccio = produccioTotal();
+    double produccioLeft = ProduccioLeft();
+
+    System.out.println("Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum));
     valorHeuristic = getValue();
+    beneficis = getBeneficis();
     } catch(java.lang.Exception e) {
         System.out.println(e);
     }
 
   }
+  public double consumTotal(){
+    double consum = 0;
+    for(int i = 0; i < clientes.size(); i++){
+      consum += clientes.get(i).getConsumo();
+    }
+    return consum;
+  }
 
+  public double produccioTotal(){
+    double produccio = 0;
+    for(int i = 0; i < centrals.size(); i++){
+      produccio+= centrals.get(i).getProduccion();
+    }
+    return produccio;
+  }
 
-  public BoarHat(int [] clients2, double [] prodLeft2){ //Constructora per generar successors
+  public double ProduccioLeft(){
+    double produccioLeft = 0;
+    for(int i = 0; i < prodLeft.length; i++){
+      produccioLeft += prodLeft[i];
+    }
+    return produccioLeft;
+  }
+
+  public BoarHat(int [] clients2, double [] prodLeft2, double beneficis2){ //Constructora per generar successors
 
       try{
+      beneficis = beneficis2;
       clients = new int[clients2.length];
       prodLeft = new double[prodLeft2.length];
       for(int i = 0; i < clients2.length; i++){
@@ -123,10 +154,12 @@ public class BoarHat {
 
   public double prodTotal(int i){
     return centrals.get(i).getProduccion();
+
   }
 
   public double prodOcupada(int i){
     return centrals.get(i).getProduccion() - prodLeft[i];
+
   }
 
   public double getDistancia(int cent, int cli){
@@ -162,14 +195,34 @@ public class BoarHat {
       prodLeft[centPre]+= prod;
       prodLeft[cent]-= prod;
       clients[cli] = cent;
+      beneficis = getBeneficis();
       return true;
     }
     else {
       if(prodLeft[cent] < prod) return false;
       prodLeft[cent]-= prod;
       clients[cli] = cent;
+      beneficis = getBeneficis();
+      //recalcBenficisCliNoAssig(cli, cent);
       return true;
     }
+  }
+
+  public void recalcBenficisCliNoAssig(int cli, int cent){
+    try{
+      int tipo = clientes.get(cli).getTipo();
+    int garant = clientes.get(cli).getContrato();
+    if(garant == 0){
+      beneficis+=clientes.get(cli).getConsumo()*VEnergia.getTarifaClienteGarantizada(tipo);
+    }
+    else {
+      beneficis+=clientes.get(cli).getConsumo()*VEnergia.getTarifaClienteNoGarantizada(tipo);
+    }
+    }catch(java.lang.Exception e) {
+        System.out.println(e);
+
+      }
+
   }
 
   public double getBeneficis(){
@@ -203,6 +256,10 @@ public class BoarHat {
     }
   }
 
+  public double beneficis(){
+    return beneficis;
+  }
+
   public int clientsNoAssignats(){
     int sum = 0;
     for(int i = 0; i < clients.length; i++){
@@ -210,7 +267,14 @@ public class BoarHat {
     }
     return sum;
   }
-  
+  public int centralsNoObertes(){
+    int sum = 0;
+    for(int i = 0; i < prodLeft.length; i++){
+      if(prodLeft[i] == centrals.get(i).getProduccion())++sum;
+    }
+    return sum;
+  }
+
   public double getValue(){
   double sum = 0;
    for(int i = 0; i < getNCentrals(); i++){
@@ -222,20 +286,15 @@ public class BoarHat {
 
    return sum;
    }
-   public void getCambio(int pre, int post){
-        double aux = Math.log(prodOcupada(pre)/prodTotal(pre));
-       aux = aux*prodOcupada(pre)/prodTotal(pre);
-       
-       double aux2 = Math.log(prodOcupada(post)/prodTotal(post));
-       aux2 = aux2*prodOcupada(post)/prodTotal(post);
-       
-       valorHeuristic = valorHeuristic + aux - aux2;
-       return;
-   }
-   
+
+
+
+
    public double getValueHeuristic(){
         return valorHeuristic;
    }
+
+   public int getCentCliX(int x){
+     return clients[x];
+   }
   }
-
-
