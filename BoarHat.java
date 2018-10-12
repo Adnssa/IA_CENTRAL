@@ -48,17 +48,20 @@ public class BoarHat {
     boolean run = true;
     while (run){ //Assignem tots els garantitzats
         double prod = produccioReal(cent, cli);
-        if(prod < prodLeft[cent]*0.25) { //Posem el client a la central
-          if(clientes.get(cli).getContrato() == 0){
+        double prodCent = prodLeft[cent];
+        if(clientes.get(cli).getContrato() == 0){
+        if(prod < prodCent*0.25) { //Posem el client a la central
           clients[cli] = cent;
           prodLeft[cent]-=prod;
+          cli++;
           }
-          else {
-            clients[cli] = prodLeft.length + 1; //Als que no podem servir (de moment els no garantitzats els hi assignem una central que no existeix)
-          }
+          else cent ++;
+
+        }
+        else {
+          clients[cli] = prodLeft.length + 1; //Als que no podem servir (de moment els no garantitzats els hi assignem una central que no existeix)
           cli++;
         }
-        else cent ++;
         if(cli >= clients.length) run = false;
         else if (cent >= prodLeft.length) run = false;
         else if (cent >= centrals.size()) run = false;
@@ -66,9 +69,10 @@ public class BoarHat {
     }
     cent = cli = 0;
     run = true;
-    while (run){ //Assignem tots els possibles no garantitzats
+  /* while (run){ //Assignem tots els possibles no garantitzats
         double prod = produccioReal(cent, cli);
-        if(prod < prodLeft[cent]*0.5) { //Posem el client a la central
+        double prodCent = prodLeft[cent];
+        if(prod < prodCent*0.5) { //Posem el client a la central
           if(!clientAssignat(cli)) {
           clients[cli] = cent;
           prodLeft[cent]-=prod;
@@ -80,7 +84,7 @@ public class BoarHat {
         else if (cent >= prodLeft.length) run = false;
         else if (cent >= centrals.size()) run = false;
 
-    }
+    }*/
     valorHeuristic = getValue();
     beneficis = getBeneficis();
     } catch(java.lang.Exception e) {
@@ -107,7 +111,7 @@ public class BoarHat {
   public double ProduccioLeft(){
     double produccioLeft = 0;
     for(int i = 0; i < prodLeft.length; i++){
-      produccioLeft += (centrals.get(i).getProduccion() - prodLeft[i]);
+      produccioLeft += prodOcupada(i);
     }
     return produccioLeft;
   }
@@ -188,15 +192,16 @@ public class BoarHat {
       prodLeft[centPre]+= prodA;
       prodLeft[cent]-= prod;
       clients[cli] = cent;
-      beneficis = getBeneficis();
+      recalcBenficisCliAssig(cli, cent, centPre);
+      //beneficis = getBeneficis();
       return true;
     }
     else {
       if(prodLeft[cent] < prod) return false;
       prodLeft[cent]-= prod;
       clients[cli] = cent;
-      beneficis = getBeneficis();
-      //recalcBenficisCliNoAssig(cli, cent);
+      //beneficis = getBeneficis();
+      recalcBenficisCliNoAssig(cli, cent);
       return true;
     }
   }
@@ -236,6 +241,25 @@ public class BoarHat {
     return true;
   }
 
+  public void recalcBenficisCliAssig(int cli, int cent, int centPre){
+    try{
+    int tipo = clientes.get(cli).getTipo();
+    int garant = clientes.get(cli).getContrato();
+    int  tipo2 = centrals.get(cent).getTipo();
+    int  tipo3 = centrals.get(centPre).getTipo();
+    double prod = produccioReal(cent, cli);
+    if(prodLeft[centPre] == centrals.get(centPre).getProduccion()) beneficis+=(centrals.get(centPre).getProduccion()*VEnergia.getCosteProduccionMW(tipo3) + VEnergia.getCosteMarcha(tipo3) + VEnergia.getCosteParada(tipo3));
+    if(centrals.get(cent).getProduccion() == (prod + prodLeft[cent])){
+      beneficis-=(centrals.get(cent).getProduccion()*VEnergia.getCosteProduccionMW(tipo2) + VEnergia.getCosteMarcha(tipo2) + VEnergia.getCosteParada(tipo2));
+    }
+
+
+
+    }catch(java.lang.Exception e) {
+        System.out.println(e);
+      }
+  }
+
   public void recalcBenficisCliNoAssig(int cli, int cent){
     try{
       int tipo = clientes.get(cli).getTipo();
@@ -245,6 +269,11 @@ public class BoarHat {
     }
     else {
       beneficis+=clientes.get(cli).getConsumo()*VEnergia.getTarifaClienteNoGarantizada(tipo);
+    }
+    double prod = produccioReal(cent, cli);
+    if(centrals.get(cent).getProduccion() == (prod + prodLeft[cent])){
+      tipo = centrals.get(cent).getTipo();
+      beneficis-=(centrals.get(cent).getProduccion()*VEnergia.getCosteProduccionMW(tipo) + VEnergia.getCosteMarcha(tipo) + VEnergia.getCosteParada(tipo));
     }
     }catch(java.lang.Exception e) {
         System.out.println(e);
