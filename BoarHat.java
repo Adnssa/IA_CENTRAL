@@ -81,14 +81,6 @@ public class BoarHat {
         else if (cent >= centrals.size()) run = false;
 
     }
-    for(int i = 0; i < prodLeft.length; i++){
-      //System.out.println("Central " + i + " Left " + prodLeft[i] + " Total " + centrals.get(i).getProduccion());
-    }
-    double consum = consumTotal();
-    double produccio = produccioTotal();
-    double produccioLeft = ProduccioLeft();
-
-    System.out.println("Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum));
     valorHeuristic = getValue();
     beneficis = getBeneficis();
     } catch(java.lang.Exception e) {
@@ -192,7 +184,8 @@ public class BoarHat {
     if(clientAssignat(cli)){
       int centPre = clients[cli];
       if(prodLeft[cent] < prod) return false;
-      prodLeft[centPre]+= prod;
+      double prodA = produccioReal(centPre, cli);
+      prodLeft[centPre]+= prodA;
       prodLeft[cent]-= prod;
       clients[cli] = cent;
       beneficis = getBeneficis();
@@ -206,6 +199,14 @@ public class BoarHat {
       //recalcBenficisCliNoAssig(cli, cent);
       return true;
     }
+  }
+
+  public boolean swap(int cli1, int cli2){
+    int cent1 = clients[cli1];
+    int cent2 = clients[cli2];
+    if( clientes.get(cli1).getContrato() == 0 && !clientAssignat(cli2)) return false;
+    if( clientes.get(cli2).getContrato() == 0 && !clientAssignat(cli1)) return false;
+    return true;
   }
 
   public void recalcBenficisCliNoAssig(int cli, int cent){
