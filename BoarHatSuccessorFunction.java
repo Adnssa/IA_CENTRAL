@@ -19,20 +19,15 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
                 BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
                 boolean moure = newBoard.move(i, j); //Moure el client i a la central j.
                 if(moure) {
-
-
                 double x = newBoard.beneficis();
+                //double y = newBoard.clientsNoAssignats();
+                //double z = newBoard.centralsNoObertes();
                 double    v = TSPHF.getHeuristicValue(newBoard);
-                /*double y = newBoard.clientsNoAssignats();
-                double z = newBoard.centralsNoObertes();
-
-                double consum = newBoard.consumTotal();
-                double produccio = newBoard.produccioTotal();
-                double produccioLeft = newBoard.ProduccioLeft();*/
-
-
-                String S = "Beneficis = "+ x + "  "+BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
-               //S = S + "Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum);
+                //double consum = newBoard.consumTotal();
+                //double produccio = newBoard.produccioTotal();
+                //double produccioLeft = newBoard.ProduccioLeft();
+                String  S = "Beneficis = "+ x +BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
+                  //S += "Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum);
                 retVal.add(new Successor(S, newBoard));
               }
             }

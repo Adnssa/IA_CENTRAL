@@ -16,7 +16,6 @@ public class BoarHat {
   /// String que describe el operador
   public static String INTERCAMBIO = "Movimiento";
 
-
   // [id] -> Central
   private static Centrales centrals;
 
@@ -67,9 +66,9 @@ public class BoarHat {
         else if (cent >= centrals.size()) run = false;
 
     }
-    cent = cli = 0;
+  /*cent = cli = 0;
     run = true;
-  /* while (run){ //Assignem tots els possibles no garantitzats
+  while (run){ //Assignem tots els possibles no garantitzats
         double prod = produccioReal(cent, cli);
         double prodCent = prodLeft[cent];
         if(prod < prodCent*0.5) { //Posem el client a la central
@@ -83,9 +82,8 @@ public class BoarHat {
         if(cli >= clients.length) run = false;
         else if (cent >= prodLeft.length) run = false;
         else if (cent >= centrals.size()) run = false;
-
     }*/
-    valorHeuristic = getValue();
+    //valorHeuristic = getValue();
     beneficis = getBeneficis();
     } catch(java.lang.Exception e) {
         System.out.println(e);
@@ -344,6 +342,9 @@ public class BoarHat {
    return sum;
    }
 
+   public int CliACent(int cli){
+     return clients[cli];
+   }
 
 
 

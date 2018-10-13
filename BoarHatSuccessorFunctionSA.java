@@ -22,23 +22,19 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
 
        do{
               j=myRandom.nextInt(board.getNCentrals());
-       } while (i==j);
+       } while (board.CliACent(i)==j);
 
 
       BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
 
       boolean moure = newBoard.move(i,j);
-      /*while(!moure){
-        do{
-               j=myRandom.nextInt(board.getNCentrals());
-        } while (i==j);
-
-        moure = newBoard.move(i,j);
-      }*/
-   //    double   v = TSPHF.getHeuristicValue(newBoard);
-   //    String S = new String( i +"|" + j );
-
-       if(moure)retVal.add(new Successor("", newBoard));
+      double y = newBoard.clientsNoAssignats();
+      double z = newBoard.centralsNoObertes();
+      double   v = TSPHF.getHeuristicValue(newBoard);
+      double x = newBoard.beneficis();
+      String  S = "Beneficis = "+ x + " "+y+" "+ z+BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
+      System.out.println(S);
+       if(moure)retVal.add(new Successor(S, newBoard));
 
       return retVal;
     }
