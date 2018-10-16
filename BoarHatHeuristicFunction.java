@@ -10,8 +10,16 @@ public class BoarHatHeuristicFunction implements HeuristicFunction  {
 
   public double getHeuristicValue(Object state) {
    BoarHat board=(BoarHat)state;
+   //System.out.println("BENEFICIS: "+(-board.beneficis()));
+   //System.out.println("Value: "+(board.getValue()));
 
-   double sum = -board.beneficis();
+   //double sum = -board.beneficis();
+   //double sum = -board.beneficis()+board.getValue();
+   //double sum = -(board.beneficis()+board.getHeurIndex());
+   double sum = -(board.getHeurIndex());
+   //double sum = -board.beneficis();
+   
+   //System.out.println("Fin: "+sum);
    return sum;
   }
 

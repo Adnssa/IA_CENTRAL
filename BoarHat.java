@@ -14,6 +14,15 @@ import IA.Energia.Cliente;
 import IA.Energia.VEnergia;
 
 public class BoarHat {
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_BLACK = "\u001B[30m";
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_PURPLE = "\u001B[35m";
+	public static final String ANSI_CYAN = "\u001B[36m";
+	public static final String ANSI_WHITE = "\u001B[37m";
 
 	/// String que describe el operador
 	public static String INTERCAMBIO = "Movimiento";
@@ -44,7 +53,7 @@ public class BoarHat {
 			//INIT CLIENTS
 			clientes = new Clientes(ncli, propc, propg, seedCli);
 			clients = new int[clientes.size()];
-			Arrays.fill(clients, clientes.size()+1);
+			Arrays.fill(clients, centrals.size()+1);
 			int cent = 0;
 			int cli = 0;
 			boolean run = true;
@@ -140,9 +149,29 @@ public class BoarHat {
 				//run = false;
 			}
 			else if (cent >= centrals.size()) run = false;
-
 		}
 
+		printState();
+	}
+
+	public void printState() {
+		int[] centt = new int[42];
+
+		for(int i = 0; i < clients.length; i++) { 
+			centt[clients[i]] += 1;
+		}
+		
+
+		for(int i = 0; i < centt.length; i++) {
+			if (i < centrals.size()) {
+				System.out.println("Central "+i+": "+ANSI_GREEN+centt[i]+ANSI_RESET+" Produccio: "+
+				ANSI_PURPLE+centrals.get(i).getProduccion()+ANSI_RESET+
+				" Usada: "+ANSI_RED+(centrals.get(i).getProduccion()-prodLeft[i])+ANSI_RESET);
+				//" Usada: "+Math.round(prodLeft[i]));
+			} else {
+				System.out.println("Central NONE: "+ANSI_GREEN+centt[i]+ANSI_RESET);
+			}
+		}
 	}
 
 	public double consumTotal(){
@@ -368,6 +397,25 @@ public class BoarHat {
 
 	public double beneficis(){
 		return beneficis;
+	}
+
+	public double getHeurIndex() {
+		double val = getValue()*10;
+		int nAcli = clientsNoAssignats()*1000;
+		int nCent = 0;
+		double centInd = 0;
+		for(int i = 0; i < prodLeft.length; i++){
+			Central cent = centrals.get(i);
+			// Central No Oberta
+			if(prodLeft[i] == cent.getProduccion()) {
+				nCent++;
+			} else {
+				double aux = cent.getProduccion()
+				*((prodLeft[i]*1)/cent.getProduccion());
+				centInd += aux;
+			}
+		}
+		return val-nAcli+nCent+centInd;
 	}
 
 	public int clientsNoAssignats(){
