@@ -12,6 +12,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 			ArrayList                retVal = new ArrayList();
 			BoarHat             board  = (BoarHat) aState;
 			BoarHatHeuristicFunction TSPHF  = new BoarHatHeuristicFunction();
+			BoarHat retfin = null;
 
 
 			for (int i = 0; i < board.getNClients(); i++) {
@@ -19,6 +20,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 					BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
 					boolean moure = newBoard.move(i, j); //Moure el client i a la central j.
 					if(moure) {
+						retfin = newBoard;
 						double x = newBoard.beneficis();
 						//double y = newBoard.clientsNoAssignats();
 						//double z = newBoard.centralsNoObertes();
@@ -31,7 +33,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 						retVal.add(new Successor(S, newBoard));
 					}
 				}
-				/*for (int j = i; j < board.getNClients(); j++) {
+				for (int j = i; j < board.getNClients(); j += 2) {
 					BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
 					boolean moure = newBoard.swap(i, j); //Moure el client i a la central j.
 					if(moure) {
@@ -46,8 +48,10 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 						//S += "Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum);
 						retVal.add(new Successor(S, newBoard));
 					}
-				}*/
 				}
+				}
+
+				retfin.printState();
 
 				return retVal;
 			}
