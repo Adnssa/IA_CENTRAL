@@ -31,9 +31,9 @@ public class CentralDemo {
         BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
         System.out.println("Beneficis = " + TSPB.getBeneficis() + "Clients No assignats = " + TSPB.clientsNoAssignats() + " Centrals Tancades " + TSPB.centralsNoObertes());
         long start = new Date().getTime();
-        //TSPHillClimbingSearch(TSPB);
+        TSPHillClimbingSearch(TSPB);
         long tClimb = new Date().getTime();
-        TSPSimulatedAnnealingSearch(TSPB);
+        //TSPSimulatedAnnealingSearch(TSPB);
         long tAnneal = new Date().getTime();
         System.out.println("Temps SolIni = " +String.valueOf(start - pre)+  " Tiempo HC = " + String.valueOf(tClimb-start) + " Tiempo SA = " + String.valueOf(tAnneal - tClimb));
     }
