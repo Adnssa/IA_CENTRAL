@@ -426,7 +426,8 @@ public class BoarHat {
 				centInd += aux;
 			}
 		}
-		return val-nAcli+nCent+centInd;
+		//System.out.println("Value = " + val + " No Assignats = " + nAcli + " Centrals Tancades " + nCent + " Index " + centInd+ " Total " + (val-nAcli+nCent+centInd));
+		return val-nAcli+nCent+centInd*10+beneficis/10;
 	}
 
 	public int clientsNoAssignats(){
