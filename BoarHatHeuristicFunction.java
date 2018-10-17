@@ -18,7 +18,7 @@ public class BoarHatHeuristicFunction implements HeuristicFunction  {
    //double sum = -(board.beneficis()+board.getHeurIndex());
    double sum = -(board.getHeurIndex());
    //double sum = -board.beneficis();
-   
+
    //System.out.println("Fin: "+sum);
    return sum;
   }

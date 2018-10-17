@@ -40,6 +40,7 @@ public class BoarHat {
 	private double[] prodLeft;
 
 	private double valorHeuristic, beneficis;
+	private int cliNoAssig;
 
 
 	public BoarHat(int [] percent, int seedCent, int ncli, double [] propc, double propg, int seedCli){
@@ -79,6 +80,7 @@ public class BoarHat {
 			  }*/
 			//valorHeuristic = getValue();
 			beneficis = getBeneficis();
+			cliNoAssig = clientsNoAssignats();
 		} catch(java.lang.Exception e) {
 			System.out.println(e);
 		}
@@ -86,7 +88,7 @@ public class BoarHat {
 	}
 
 	private ArrayList<Integer> getSortedGntd() {
-		ArrayList<Integer> result = new ArrayList<Integer>(); 
+		ArrayList<Integer> result = new ArrayList<Integer>();
 		for (int i = 0; i < clients.length; i++) {
 			if (clientes.get(i).getContrato() == 0) {
 				result.add(i);
@@ -103,22 +105,22 @@ public class BoarHat {
 	}
 
 	public ArrayList<Integer> sortByProd(ArrayList<Integer> result) {
-		int n = result.size(); 
-		for (int i=1; i<n; ++i) 
-		{ 
-			int key = result.get(i); 
-			int j = i-1; 
+		int n = result.size();
+		for (int i=1; i<n; ++i)
+		{
+			int key = result.get(i);
+			int j = i-1;
 
-			/* Move elements of arr[0..i-1], that are 
-			   greater than key, to one position ahead 
+			/* Move elements of arr[0..i-1], that are
+			   greater than key, to one position ahead
 			   of their current position */
-			while (j>=0 && clientes.get(result.get(j)).getConsumo() < clientes.get(key).getConsumo()) 
-			{ 
-				result.set(j+1, result.get(j)); 
-				j = j-1; 
-			} 
-			result.set(j+1, key); 
-		} 
+			while (j>=0 && clientes.get(result.get(j)).getConsumo() < clientes.get(key).getConsumo())
+			{
+				result.set(j+1, result.get(j));
+				j = j-1;
+			}
+			result.set(j+1, key);
+		}
 
 		return result;
 	}
@@ -157,10 +159,10 @@ public class BoarHat {
 	public void printState() {
 		int[] centt = new int[42];
 
-		for(int i = 0; i < clients.length; i++) { 
+		for(int i = 0; i < clients.length; i++) {
 			centt[clients[i]] += 1;
 		}
-		
+
 
 		for(int i = 0; i < centt.length; i++) {
 			if (i < centrals.size()) {
@@ -198,10 +200,11 @@ public class BoarHat {
 		return produccioLeft;
 	}
 
-	public BoarHat(int [] clients2, double [] prodLeft2, double beneficis2){ //Constructora per generar successors
+	public BoarHat(int [] clients2, double [] prodLeft2, double beneficis2, int cliNoAssig2){ //Constructora per generar successors
 
 		try{
 			beneficis = beneficis2;
+			cliNoAssig = cliNoAssig2;
 			clients = new int[clients2.length];
 			prodLeft = new double[prodLeft2.length];
 			for(int i = 0; i < clients2.length; i++){
@@ -220,6 +223,10 @@ public class BoarHat {
 	public boolean clientAssignat(int cli){
 		if(clients[cli] == prodLeft.length + 1) return false;
 		else return true;
+	}
+
+	public int getNoAssig(){
+		return cliNoAssig;
 	}
 
 	public int getNCentrals(){
@@ -283,6 +290,7 @@ public class BoarHat {
 			prodLeft[cent]-= prod;
 			clients[cli] = cent;
 			//beneficis = getBeneficis();
+			--cliNoAssig;
 			recalcBenficisCliNoAssig(cli, cent);
 			return true;
 		}
@@ -300,6 +308,7 @@ public class BoarHat {
 			prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
+			beneficis = getBeneficis();
 			return true;
 		}
 		if(!clientAssignat(cli2)){
@@ -308,6 +317,7 @@ public class BoarHat {
 			prodLeft[cent1] = prodLeft[cent1] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
+			beneficis = getBeneficis();
 			return true;
 		}
 		double prodR1 = produccioReal(cent2, cli1);
@@ -320,6 +330,7 @@ public class BoarHat {
 		clients[cli2] = cent1;
 		prodLeft[cent1] = prodLeft[cent1] - prodR2 + prodPre1;
 		prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre2;
+		beneficis = getBeneficis();
 		return true;
 	}
 
@@ -401,7 +412,7 @@ public class BoarHat {
 
 	public double getHeurIndex() {
 		double val = getValue()*10;
-		int nAcli = clientsNoAssignats()*1000;
+		int nAcli = getNoAssig()*1000;
 		int nCent = 0;
 		double centInd = 0;
 		for(int i = 0; i < prodLeft.length; i++){
@@ -436,8 +447,10 @@ public class BoarHat {
 	public double getValue(){
 		double sum = 0;
 		for(int i = 0; i < getNCentrals(); i++){
+			if(prodOcupada(i) > 0){
 			double aux = Math.log(prodOcupada(i)/prodTotal(i));
 			sum-= aux*prodOcupada(i)/prodTotal(i);
+			}
 			//sum+=Math.pow(board.prodTotal(i) - board.prodOcupada(i),2);
 		}
 		//sum = -board.getBeneficis();

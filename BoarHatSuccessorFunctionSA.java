@@ -25,7 +25,7 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
        } while (board.CliACent(i)==j);
 
 
-      BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
+      BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
 
       boolean moure = newBoard.move(i,j);
       double y = newBoard.clientsNoAssignats();
