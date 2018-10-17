@@ -35,7 +35,14 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
       String  S = "Beneficis = "+ x + " "+y+" "+ z+BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
       System.out.println(S);
        if(moure)retVal.add(new Successor(S, newBoard));
+       i=myRandom.nextInt(board.getNClients());
 
+       do{
+              j=myRandom.nextInt(board.getNClients());
+       } while (i==j);
+       BoarHat newBoard2 = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
+       moure = newBoard.swap(i,j);
+      if(moure)retVal.add(new Successor(S, newBoard));
       return retVal;
     }
 }
