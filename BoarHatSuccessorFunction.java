@@ -51,7 +51,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 				}
 				}
 
-				retfin.printState();
+				//retfin.printState();
 
 				return retVal;
 			}

@@ -321,19 +321,21 @@ public class BoarHat {
 		if(!clientAssignat(cli1)){
 			double prodPre1 = produccioReal(cent2, cli2);
 			double prodR1 = produccioReal(cent2, cli1);
+			if(prodLeft[cent2] + prodPre1 - prodR1 < 0) return false;
 			prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
-			beneficis = getBeneficis();
+			//beneficis = getBeneficis();
 			return true;
 		}
 		if(!clientAssignat(cli2)){
 			double prodPre1 = produccioReal(cent1, cli1);
 			double prodR1 = produccioReal(cent1, cli2);
+			if(prodLeft[cent1] + prodPre1 - prodR1 < 0) return false;
 			prodLeft[cent1] = prodLeft[cent1] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
-			beneficis = getBeneficis();
+			//beneficis = getBeneficis();
 			return true;
 		}
 		double prodR1 = produccioReal(cent2, cli1);
@@ -445,7 +447,7 @@ public class BoarHat {
 		//System.out.println("Value = " + val + " No Assignats = " + nAcli + " Centrals Tancades " + nCent + " Index " + centInd+ " Total " + (val-nAcli+nCent+centInd));
 		//return val-nAcli+nCent+centInd*10+beneficis/10;
 		//return val-nAcli+nCent+centInd*10;
-		return -nAcli+nCent*10000+centInd*1;
+		return -nAcli+nCent*10000 +centInd*1;
 	}
 
 	public int clientsNoAssignats(){
