@@ -98,8 +98,6 @@ public class BoarHat {
 		result = sortByProd(result);
 
 		System.out.println("Size: "+result.size());
-		System.out.println("Prod: "+clientes.get(result.get(0)).getConsumo());
-		System.out.println("Prod: "+clientes.get(result.get(730)).getConsumo());
 		//System.out.println(result.toString());
 		return result;
 	}
@@ -150,6 +148,24 @@ public class BoarHat {
 				cent = 0;
 				//run = false;
 			}
+			else if (cent >= centrals.size()) run = false;
+		}
+		
+		cent = cli = 0;
+		run = true;
+		while (run){ //Assignem tots els possibles no garantitzats
+			double prod = produccioReal(cent, cli);
+			double prodCent = prodLeft[cent];
+			if(prod < prodCent*0.5) { //Posem el client a la central
+				if(!clientAssignat(cli)) {
+					clients[cli] = cent;
+					prodLeft[cent]-=prod;
+				}
+				cli++;
+			}
+			else cent ++;
+			if(cli >= clients.length) run = false;
+			else if (cent >= prodLeft.length) run = false;
 			else if (cent >= centrals.size()) run = false;
 		}
 
@@ -411,8 +427,8 @@ public class BoarHat {
 	}
 
 	public double getHeurIndex() {
-		double val = getValue()*10;
-		int nAcli = getNoAssig()*1000;
+		//double val = getValue()*10;
+		int nAcli = getNoAssig()*100;
 		int nCent = 0;
 		double centInd = 0;
 		for(int i = 0; i < prodLeft.length; i++){
@@ -427,7 +443,9 @@ public class BoarHat {
 			}
 		}
 		//System.out.println("Value = " + val + " No Assignats = " + nAcli + " Centrals Tancades " + nCent + " Index " + centInd+ " Total " + (val-nAcli+nCent+centInd));
-		return val-nAcli+nCent+centInd*10+beneficis/10;
+		//return val-nAcli+nCent+centInd*10+beneficis/10;
+		//return val-nAcli+nCent+centInd*10;
+		return -nAcli+nCent*10000+centInd*1;
 	}
 
 	public int clientsNoAssignats(){
