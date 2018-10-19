@@ -16,7 +16,7 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 
 
 			for (int i = 0; i < board.getNClients(); i++) {
-				for (int j = 0; j < board.getNCentrals(); j++) {
+				/*for (int j = 0; j < board.getNCentrals(); j++) {
 					BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
 					boolean moure = newBoard.move(i, j); //Moure el client i a la central j.
 					if(moure) {
@@ -32,10 +32,10 @@ public class BoarHatSuccessorFunction implements SuccessorFunction {
 						//S += "Consum = " +consum+ " Produccio = " + produccio + " Produccio Left " + produccioLeft + " -- " + String.valueOf(produccio - consum);
 						retVal.add(new Successor(S, newBoard));
 					}
-				}
-				for (int j = i; j < board.getNClients(); j += 2) {
+				}*/
+				for (int j = i; j < board.getNClients(); j++) {
 					BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
-					boolean moure = newBoard.swap(i, j); //Moure el client i a la central j.
+					boolean moure = newBoard.swap(i, j);
 					if(moure) {
 						double x = newBoard.beneficis();
 					//	double y = newBoard.clientsNoAssignats();

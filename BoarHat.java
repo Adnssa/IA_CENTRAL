@@ -150,7 +150,7 @@ public class BoarHat {
 			}
 			else if (cent >= centrals.size()) run = false;
 		}
-		
+
 		cent = cli = 0;
 		run = true;
 		while (run){ //Assignem tots els possibles no garantitzats
@@ -293,6 +293,9 @@ public class BoarHat {
 		if(clientAssignat(cli)){
 			int centPre = clients[cli];
 			if(prodLeft[cent] < prod) return false;
+			double dist1 = getDistancia(centPre, cli);
+			double dist2 = getDistancia(cent, cli);
+			if(dist1 < dist2) return false;
 			double prodA = produccioReal(centPre, cli);
 			prodLeft[centPre]+= prodA;
 			prodLeft[cent]-= prod;
@@ -318,26 +321,40 @@ public class BoarHat {
 		if( !clientAssignat(cli1) && !clientAssignat(cli2)) return false;
 		if( clientes.get(cli1).getContrato() == 0 && !clientAssignat(cli2)) return false;
 		if( clientes.get(cli2).getContrato() == 0 && !clientAssignat(cli1)) return false;
+
 		if(!clientAssignat(cli1)){
 			double prodPre1 = produccioReal(cent2, cli2);
 			double prodR1 = produccioReal(cent2, cli1);
+			double dist1 = getDistancia(cent2, cli1);
+			double dist2 = getDistancia(cent2, cli2);
+			if(dist1 > dist2) return false;
 			if(prodLeft[cent2] + prodPre1 - prodR1 < 0) return false;
 			prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
-			//beneficis = getBeneficis();
+			beneficis = getBeneficis();
 			return true;
 		}
+
 		if(!clientAssignat(cli2)){
 			double prodPre1 = produccioReal(cent1, cli1);
 			double prodR1 = produccioReal(cent1, cli2);
+			double dist1 = getDistancia(cent1, cli1);
+			double dist2 = getDistancia(cent1, cli2);
+			if(dist1 < dist2) return false;
 			if(prodLeft[cent1] + prodPre1 - prodR1 < 0) return false;
 			prodLeft[cent1] = prodLeft[cent1] - prodR1 + prodPre1;
 			clients[cli1] = cent2;
 			clients[cli2] = cent1;
-			//beneficis = getBeneficis();
+			beneficis = getBeneficis();
 			return true;
 		}
+		double dist1 = getDistancia(cent1, cli1);
+		double dist2 = getDistancia(cent2, cli1);
+		if(dist2 > dist1) return false;
+		dist1 = getDistancia(cent1, cli2);
+		dist2 = getDistancia(cent2, cli2);
+		if(dist2 < dist1) return false;
 		double prodR1 = produccioReal(cent2, cli1);
 		double prodR2 = produccioReal(cent1, cli2);
 		double prodPre1 = produccioReal(cent1, cli1);
@@ -348,7 +365,7 @@ public class BoarHat {
 		clients[cli2] = cent1;
 		prodLeft[cent1] = prodLeft[cent1] - prodR2 + prodPre1;
 		prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre2;
-		beneficis = getBeneficis();
+		//beneficis = getBeneficis();
 		return true;
 	}
 

@@ -25,10 +25,10 @@ public class CentralDemo {
         int ncli = 1000;
         double [] propc  = {0.25, 0.3, 0.45};
         double propg = 0.75;
-        int seedCli = 1234;
+
 
         long pre = new Date().getTime();
-        BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
+        BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCent);
         System.out.println("Beneficis = " + TSPB.getBeneficis() + "Clients No assignats = " + TSPB.clientsNoAssignats() + " Centrals Tancades " + TSPB.centralsNoObertes());
         long start = new Date().getTime();
         TSPHillClimbingSearch(TSPB);
