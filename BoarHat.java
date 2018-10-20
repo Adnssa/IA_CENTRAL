@@ -129,13 +129,18 @@ public class BoarHat {
 		int cli = 0;
 		boolean run = true;
 
-		ArrayList<Integer> garantits = getSortedGntd();
+		//ArrayList<Integer> garantits = getSortedGntd();
 
 		while (run){ //Assignem tots els garantitzats
-			double prod = produccioReal(cent, garantits.get(cli));
+                        if (clientes.get(cli).getContrato() != 0) {
+                            cli++;
+                            if(cli >= clientes.size()) run = false;
+                            continue;
+                        }
+			double prod = produccioReal(cent, cli);
 			double prodCent = prodLeft[cent];
 			if(prod < prodCent) { //Posem el client a la central
-				clients[garantits.get(cli)] = cent;
+				clients[cli] = cent;
 				prodLeft[cent]-=prod;
 				cent++;
 				cli++;
@@ -143,7 +148,7 @@ public class BoarHat {
 				cent ++;
 			}
 
-			if(cli >= garantits.size()) run = false;
+			if(cli >= clientes.size()) run = false;
 			else if (cent >= prodLeft.length) {
 				cent = 0;
 				//run = false;
@@ -156,7 +161,7 @@ public class BoarHat {
 		while (run){ //Assignem tots els possibles no garantitzats
 			double prod = produccioReal(cent, cli);
 			double prodCent = prodLeft[cent];
-			if(prod < prodCent*0.5) { //Posem el client a la central
+			if(prod < prodCent) { //Posem el client a la central
 				if(!clientAssignat(cli)) {
 					clients[cli] = cent;
 					prodLeft[cent]-=prod;

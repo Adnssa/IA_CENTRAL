@@ -21,7 +21,7 @@ public class CentralDemo {
 
     public static void main(String[] args){
         int [] percent  = {5, 10, 25};
-        int seedCent = 1234;
+        int seedCent = Integer.valueOf(args[0]);
         int ncli = 1000;
         double [] propc  = {0.25, 0.3, 0.45};
         double propg = 0.75;
