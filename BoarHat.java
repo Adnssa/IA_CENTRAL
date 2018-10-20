@@ -150,8 +150,9 @@ public class BoarHat {
 
 			if(cli >= clientes.size()) run = false;
 			else if (cent >= prodLeft.length) {
+                                cli++;
 				cent = 0;
-				//run = false;
+				// run = false;
 			}
 			else if (cent >= centrals.size()) run = false;
 		}
