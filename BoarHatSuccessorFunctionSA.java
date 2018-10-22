@@ -14,35 +14,32 @@ public class BoarHatSuccessorFunctionSA implements SuccessorFunction {
         BoarHat             board  = (BoarHat) aState;
         BoarHatHeuristicFunction TSPHF  = new BoarHatHeuristicFunction();
         Random myRandom=new Random();
+        String S = "";
         int i,j;
 
         // Nos ahorramos generar todos los sucesores escogiendo un par de ciudades al azar
 
-       i=myRandom.nextInt(board.getNClients());
+        i=myRandom.nextInt(board.getNClients());
 
-       do{
-              j=myRandom.nextInt(board.getNCentrals());
-       } while (board.CliACent(i)==j);
+        do{
+            j=myRandom.nextInt(board.getNCentrals());
+        } while (board.CliACent(i)==j);
 
 
-      BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
+        BoarHat newBoard = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
 
-      boolean moure = newBoard.move(i,j);
-      double y = newBoard.clientsNoAssignats();
-      double z = newBoard.centralsNoObertes();
-      double   v = TSPHF.getHeuristicValue(newBoard);
-      double x = newBoard.beneficis();
-      String  S = "Beneficis = "+ x + " "+y+" "+ z+BoarHat.INTERCAMBIO + " " + i + " " + j + " Coste(" + v + ") ---> " + newBoard.toString();
-      System.out.println(S);
-       if(moure)retVal.add(new Successor(S, newBoard));
-       i=myRandom.nextInt(board.getNClients());
+        boolean moure = newBoard.move(i,j);
+        double v = TSPHF.getHeuristicValue(newBoard);
+        double x = newBoard.beneficis();
+        if(moure)retVal.add(new Successor(S, newBoard));
+        i=myRandom.nextInt(board.getNClients());
 
-       do{
-              j=myRandom.nextInt(board.getNClients());
-       } while (i==j);
-       BoarHat newBoard2 = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis(), board.getNoAssig());
-       moure = newBoard.swap(i,j);
-      if(moure)retVal.add(new Successor(S, newBoard));
-      return retVal;
+        do{
+            j=myRandom.nextInt(board.getNClients());
+        } while (i==j);
+        BoarHat newBoard2 = new BoarHat(board.getClients(), board.getProdLeft(), board.beneficis());
+        moure = newBoard.swap(i,j);
+        if(moure)retVal.add(new Successor(S, newBoard));
+        return retVal;
     }
 }

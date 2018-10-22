@@ -36,7 +36,7 @@ public class CentralDemo {
         long start = new Date().getTime();
         TSPHillClimbingSearch(TSPB);
         long tClimb = new Date().getTime();
-        //TSPSimulatedAnnealingSearch(TSPB);
+        TSPSimulatedAnnealingSearch(TSPB);
         long tAnneal = new Date().getTime();
         System.out.println("Temps SolIni = " +String.valueOf(start - pre)+  " Tiempo HC = " + String.valueOf(tClimb-start) + " Tiempo SA = " + String.valueOf(tAnneal - tClimb));
     }

@@ -59,26 +59,9 @@ public class BoarHat {
 			int cli = 0;
 			boolean run = true;
 
-			getInitialSolution();
+			//getInitialSolution();
+			getBadInitialSolution();
 
-			/*cent = cli = 0;
-			  run = true;
-			  while (run){ //Assignem tots els possibles no garantitzats
-			  double prod = produccioReal(cent, cli);
-			  double prodCent = prodLeft[cent];
-			  if(prod < prodCent*0.5) { //Posem el client a la central
-			  if(!clientAssignat(cli)) {
-			  clients[cli] = cent;
-			  prodLeft[cent]-=prod;
-			  }
-			  cli++;
-			  }
-			  else cent ++;
-			  if(cli >= clients.length) run = false;
-			  else if (cent >= prodLeft.length) run = false;
-			  else if (cent >= centrals.size()) run = false;
-			  }*/
-			//valorHeuristic = getValue();
 			beneficis = getBeneficis();
 			cliNoAssig = clientsNoAssignats();
 		} catch(java.lang.Exception e) {
@@ -97,8 +80,6 @@ public class BoarHat {
 
 		result = sortByProd(result);
 
-		System.out.println("Size: "+result.size());
-		//System.out.println(result.toString());
 		return result;
 	}
 
@@ -123,20 +104,72 @@ public class BoarHat {
 		return result;
 	}
 
-	private void getInitialSolution() {
+	private void getBadInitialSolution() {
 		// Init Vars
 		int cent = 0;
 		int cli = 0;
 		boolean run = true;
 
-		//ArrayList<Integer> garantits = getSortedGntd();
+		ArrayList<Integer> garantits = getSortedGntd();
 
 		while (run){ //Assignem tots els garantitzats
-                        if (clientes.get(cli).getContrato() != 0) {
-                            cli++;
-                            if(cli >= clientes.size()) run = false;
-                            continue;
-                        }
+			if(cli >= garantits.size()) run = false;
+			double prod = produccioReal(cent, garantits.get(cli));
+			double prodCent = prodLeft[cent];
+			if(prod < prodCent) { //Posem el client a la central
+				clients[garantits.get(cli)] = cent;
+				prodLeft[cent]-=prod;
+				cent++;
+				cli++;
+			} else {
+				cent ++;
+			}
+
+			if(cli >= garantits.size()) run = false;
+			else if (cent >= prodLeft.length) {
+				cent = 0;
+			}
+			else if (cent >= centrals.size()) run = false;
+		}
+
+		cent = cli = 0;
+		run = true;
+		while (run){ //Assignem tots els possibles no garantitzats
+			double prod = produccioReal(cent, cli);
+			double prodCent = prodLeft[cent];
+			if(prod < prodCent*0.5) { //Posem el client a la central
+				if(!clientAssignat(cli)) {
+					clients[cli] = cent;
+					prodLeft[cent]-=prod;
+				}
+				cli++;
+			}
+			else cent ++;
+			if(cli >= clients.length) run = false;
+			else if (cent >= prodLeft.length) run = false;
+			else if (cent >= centrals.size()) run = false;
+		}
+
+		printState();
+	}
+
+	private void getInitialSolution() {
+		// Init Vars
+		int cent = 0;
+		int cli = 0;
+		boolean run = true;
+		int times_done = 0;
+
+
+		while (run){ //Assignem tots els garantitzats
+			if(cli >= clientes.size()) { 
+				run = false;
+				continue;
+			}
+			if (clientes.get(cli).getContrato() != 0) {
+				cli++;
+				continue;
+			}
 			double prod = produccioReal(cent, cli);
 			double prodCent = prodLeft[cent];
 			if(prod < prodCent) { //Posem el client a la central
@@ -150,9 +183,16 @@ public class BoarHat {
 
 			if(cli >= clientes.size()) run = false;
 			else if (cent >= prodLeft.length) {
-                                cli++;
+				/*
+				if (times_done >= 1) {
+					cli++;
+					cent = 0;
+					times_done = 0;
+					continue;
+				}
+				*/
 				cent = 0;
-				// run = false;
+				times_done++;
 			}
 			else if (cent >= centrals.size()) run = false;
 		}
@@ -189,9 +229,8 @@ public class BoarHat {
 		for(int i = 0; i < centt.length; i++) {
 			if (i < centrals.size()) {
 				System.out.println("Central "+i+": "+ANSI_GREEN+centt[i]+ANSI_RESET+" Produccio: "+
-				ANSI_PURPLE+centrals.get(i).getProduccion()+ANSI_RESET+
-				" Usada: "+ANSI_RED+(centrals.get(i).getProduccion()-prodLeft[i])+ANSI_RESET);
-				//" Usada: "+Math.round(prodLeft[i]));
+						ANSI_PURPLE+centrals.get(i).getProduccion()+ANSI_RESET+
+						" Usada: "+ANSI_RED+(centrals.get(i).getProduccion()-prodLeft[i])+ANSI_RESET);
 			} else {
 				System.out.println("Central NONE: "+ANSI_GREEN+centt[i]+ANSI_RESET);
 			}
@@ -222,11 +261,9 @@ public class BoarHat {
 		return produccioLeft;
 	}
 
-	public BoarHat(int [] clients2, double [] prodLeft2, double beneficis2, int cliNoAssig2){ //Constructora per generar successors
-
+	public BoarHat(int [] clients2, double [] prodLeft2, double beneficis2){ //Constructora per generar successors
 		try{
 			beneficis = beneficis2;
-			cliNoAssig = cliNoAssig2;
 			clients = new int[clients2.length];
 			prodLeft = new double[prodLeft2.length];
 			for(int i = 0; i < clients2.length; i++){
@@ -307,14 +344,12 @@ public class BoarHat {
 			prodLeft[cent]-= prod;
 			clients[cli] = cent;
 			recalcBenficisCliAssig(cli, cent, centPre);
-			//beneficis = getBeneficis();
 			return true;
 		}
 		else {
 			if(prodLeft[cent] < prod) return false;
 			prodLeft[cent]-= prod;
 			clients[cli] = cent;
-			//beneficis = getBeneficis();
 			--cliNoAssig;
 			recalcBenficisCliNoAssig(cli, cent);
 			return true;
@@ -371,7 +406,6 @@ public class BoarHat {
 		clients[cli2] = cent1;
 		prodLeft[cent1] = prodLeft[cent1] - prodR2 + prodPre1;
 		prodLeft[cent2] = prodLeft[cent2] - prodR1 + prodPre2;
-		//beneficis = getBeneficis();
 		return true;
 	}
 
@@ -452,7 +486,6 @@ public class BoarHat {
 	}
 
 	public double getHeurIndex() {
-		//double val = getValue()*10;
 		int nAcli = getNoAssig()*100;
 		int nCent = 0;
 		double centInd = 0;
@@ -463,13 +496,11 @@ public class BoarHat {
 				nCent++;
 			} else {
 				double aux = cent.getProduccion()
-				*((prodLeft[i]*1)/cent.getProduccion());
+					*((prodLeft[i]*1)/cent.getProduccion());
 				centInd += aux;
 			}
 		}
-		//System.out.println("Value = " + val + " No Assignats = " + nAcli + " Centrals Tancades " + nCent + " Index " + centInd+ " Total " + (val-nAcli+nCent+centInd));
-		//return val-nAcli+nCent+centInd*10+beneficis/10;
-		//return val-nAcli+nCent+centInd*10;
+		
 		return -nAcli+nCent*10000 +centInd*1;
 	}
 
@@ -492,12 +523,10 @@ public class BoarHat {
 		double sum = 0;
 		for(int i = 0; i < getNCentrals(); i++){
 			if(prodOcupada(i) > 0){
-			double aux = Math.log(prodOcupada(i)/prodTotal(i));
-			sum-= aux*prodOcupada(i)/prodTotal(i);
+				double aux = Math.log(prodOcupada(i)/prodTotal(i));
+				sum-= aux*prodOcupada(i)/prodTotal(i);
 			}
-			//sum+=Math.pow(board.prodTotal(i) - board.prodOcupada(i),2);
 		}
-		//sum = -board.getBeneficis();
 
 		return sum;
 	}
@@ -510,9 +539,5 @@ public class BoarHat {
 
 	public double getValueHeuristic(){
 		return valorHeuristic;
-	}
-
-	public int getCentCliX(int x){
-		return clients[x];
 	}
 }
