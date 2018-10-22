@@ -3,4 +3,4 @@ central:
 
 .PHONY: run
 run:
-	java -cp AIMA.jar:CentralEnergia.jar:. CentralDemo
+	java -Xmx6048m -cp AIMA.jar:CentralEnergia.jar:. CentralDemo

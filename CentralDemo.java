@@ -22,20 +22,19 @@ public class CentralDemo {
     public static void main(String[] args){
         int [] percent  = {5, 10, 25};
         int seedCent = 1234;
-        int ncli = 1000;
+        int ncli = 100;
         double [] propc  = {0.25, 0.3, 0.45};
         double propg = 0.75;
         int seedCli = 1234;
 
         long pre = new Date().getTime();
         BoarHat TSPB = new BoarHat(percent, seedCent, ncli, propc, propg, seedCli);
-        System.out.println("Beneficis = " + TSPB.getBeneficis() + "Clients No assignats = " + TSPB.clientsNoAssignats() + " Centrals Tancades " + TSPB.centralsNoObertes());
         long start = new Date().getTime();
         TSPHillClimbingSearch(TSPB);
         long tClimb = new Date().getTime();
-        //TSPSimulatedAnnealingSearch(TSPB);
+        TSPSimulatedAnnealingSearch(TSPB);
         long tAnneal = new Date().getTime();
-        System.out.println("Temps SolIni = " +String.valueOf(start - pre)+  " Tiempo HC = " + String.valueOf(tClimb-start) + " Tiempo SA = " + String.valueOf(tAnneal - tClimb));
+        System.out.println("Tiempo SolIni = " +String.valueOf(start - pre)+  " Tiempo HC = " + String.valueOf(tClimb-start) + " Tiempo SA = " + String.valueOf(tAnneal - tClimb));
     }
 
     private static void TSPHillClimbingSearch(BoarHat TSPB) {
@@ -58,12 +57,11 @@ public class CentralDemo {
 
         try {
             Problem problem =  new Problem(TSPB, new BoarHatSuccessorFunctionSA(), new BoarHatGoalTest(),new BoarHatHeuristicFunction());
-            SimulatedAnnealingSearch search =  new SimulatedAnnealingSearch(2000,100,5,0.001);
+            SimulatedAnnealingSearch search =  new SimulatedAnnealingSearch(50000,100,500,0.00001);
             //search.traceOn();
             SearchAgent agent = new SearchAgent(problem,search);
 
             System.out.println();
-            //printActions(agent.getActions());
             printInstrumentation(agent.getInstrumentation());
         } catch (Exception e) {
             e.printStackTrace();
