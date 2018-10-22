@@ -1,0 +1,471 @@
+Size: 759
+Central 0: [32m116[0m Produccio: [35m594.79[0m Usada: [31m576.737[0m
+Central 1: [32m75[0m Produccio: [35m307.41[0m Usada: [31m307.36899999999997[0m
+Central 2: [32m143[0m Produccio: [35m567.42[0m Usada: [31m558.4010000000001[0m
+Central 3: [32m124[0m Produccio: [35m579.7[0m Usada: [31m555.5050000000001[0m
+Central 4: [32m90[0m Produccio: [35m400.45[0m Usada: [31m378.672[0m
+Central 5: [32m26[0m Produccio: [35m211.11[0m Usada: [31m211.06999999999996[0m
+Central 6: [32m12[0m Produccio: [35m140.64[0m Usada: [31m139.795[0m
+Central 7: [32m21[0m Produccio: [35m179.46[0m Usada: [31m179.33499999999998[0m
+Central 8: [32m28[0m Produccio: [35m205.03[0m Usada: [31m204.23700000000002[0m
+Central 9: [32m16[0m Produccio: [35m152.84[0m Usada: [31m152.59300000000002[0m
+Central 10: [32m16[0m Produccio: [35m151.41[0m Usada: [31m151.397[0m
+Central 11: [32m11[0m Produccio: [35m145.65[0m Usada: [31m145.352[0m
+Central 12: [32m37[0m Produccio: [35m242.03[0m Usada: [31m241.693[0m
+Central 13: [32m31[0m Produccio: [35m212.5[0m Usada: [31m212.42100000000002[0m
+Central 14: [32m42[0m Produccio: [35m231.1[0m Usada: [31m231.06399999999996[0m
+Central 15: [32m6[0m Produccio: [35m88.41[0m Usada: [31m88.32600000000001[0m
+Central 16: [32m2[0m Produccio: [35m37.62[0m Usada: [31m37.495999999999995[0m
+Central 17: [32m7[0m Produccio: [35m85.4[0m Usada: [31m85.34799999999998[0m
+Central 18: [32m6[0m Produccio: [35m95.55[0m Usada: [31m95.538[0m
+Central 19: [32m2[0m Produccio: [35m18.62[0m Usada: [31m18.504[0m
+Central 20: [32m5[0m Produccio: [35m73.36[0m Usada: [31m73.012[0m
+Central 21: [32m5[0m Produccio: [35m76.41[0m Usada: [31m76.32199999999999[0m
+Central 22: [32m2[0m Produccio: [35m44.13[0m Usada: [31m43.175999999999995[0m
+Central 23: [32m7[0m Produccio: [35m91.55[0m Usada: [31m91.488[0m
+Central 24: [32m2[0m Produccio: [35m26.36[0m Usada: [31m25.862000000000002[0m
+Central 25: [32m4[0m Produccio: [35m73.77[0m Usada: [31m72.733[0m
+Central 26: [32m3[0m Produccio: [35m39.63[0m Usada: [31m39.617000000000004[0m
+Central 27: [32m2[0m Produccio: [35m26.45[0m Usada: [31m26.384[0m
+Central 28: [32m7[0m Produccio: [35m89.33[0m Usada: [31m89.117[0m
+Central 29: [32m3[0m Produccio: [35m48.49[0m Usada: [31m47.878[0m
+Central 30: [32m4[0m Produccio: [35m62.6[0m Usada: [31m62.58299999999999[0m
+Central 31: [32m2[0m Produccio: [35m22.84[0m Usada: [31m22.194000000000003[0m
+Central 32: [32m3[0m Produccio: [35m35.91[0m Usada: [31m35.839[0m
+Central 33: [32m3[0m Produccio: [35m51.63[0m Usada: [31m51.05800000000001[0m
+Central 34: [32m3[0m Produccio: [35m35.66[0m Usada: [31m35.417[0m
+Central 35: [32m2[0m Produccio: [35m24.32[0m Usada: [31m24.189999999999998[0m
+Central 36: [32m5[0m Produccio: [35m77.47[0m Usada: [31m76.614[0m
+Central 37: [32m9[0m Produccio: [35m98.95[0m Usada: [31m98.601[0m
+Central 38: [32m3[0m Produccio: [35m35.99[0m Usada: [31m35.97[0m
+Central 39: [32m2[0m Produccio: [35m28.86[0m Usada: [31m28.698[0m
+Central NONE: [32m0[0m
+Central NONE: [32m113[0m
+Beneficis = 95346.24000000024Clients No assignats = 113 Centrals Tancades 0
+
+TSP HillClimbing  -->
+
+Beneficis = 94715.09000000021Movimiento 72 839 Coste(11190.5) ---> BoarHat@5b9499fe
+Beneficis = 94099.69000000019Movimiento 360 666 Coste(11168.444) ---> BoarHat@2bcb946e
+Beneficis = 93599.89000000019Movimiento 508 916 Coste(11147.22) ---> BoarHat@1f8a592d
+Beneficis = 93147.54000000021Movimiento 44 967 Coste(11127.421) ---> BoarHat@7850743a
+Beneficis = 92624.4900000002Movimiento 366 684 Coste(11107.867) ---> BoarHat@44cc51b2
+Beneficis = 92624.4900000002Movimiento 28 127 Coste(11089.078) ---> BoarHat@5edda15c
+Beneficis = 92104.7400000002Movimiento 521 767 Coste(11070.394) ---> BoarHat@408f5738
+Beneficis = 91686.04000000024Movimiento 94 761 Coste(11051.842) ---> BoarHat@71bc45c3
+Beneficis = 91211.89000000019Movimiento 230 752 Coste(11034.069) ---> BoarHat@879d8b2
+Beneficis = 90822.09000000023Movimiento 52 895 Coste(11017.049) ---> BoarHat@40aee4bd
+Beneficis = 90369.89000000022Movimiento 524 842 Coste(11000.681) ---> BoarHat@79bdbd0
+Beneficis = 90369.89000000022Movimiento 393 398 Coste(10984.617) ---> BoarHat@6a735f17
+Beneficis = 90369.89000000022Movimiento 443 953 Coste(10969.677) ---> BoarHat@6e6614ed
+Beneficis = 89981.0900000002Movimiento 468 746 Coste(10955.229) ---> BoarHat@392fa986
+Beneficis = 89981.0900000002Movimiento 552 788 Coste(10941.189) ---> BoarHat@61f33b2d
+Beneficis = 89981.0900000002Movimiento 50 815 Coste(10927.716) ---> BoarHat@11b3a4f3
+Beneficis = 89981.0900000002Movimiento 219 818 Coste(10915.69) ---> BoarHat@71f3570b
+Beneficis = 89739.79000000018Movimiento 1 795 Coste(10903.69) ---> BoarHat@1246f11c
+Beneficis = 89739.79000000018Movimiento 397 742 Coste(10891.913) ---> BoarHat@4945e847
+Beneficis = 89422.14000000022Movimiento 321 872 Coste(10880.407000000001) ---> BoarHat@669e8cd7
+Beneficis = 89422.14000000022Movimiento 216 886 Coste(10869.123) ---> BoarHat@69750936
+Beneficis = 89422.14000000022Movimiento 166 619 Coste(10858.121000000001) ---> BoarHat@290e3165
+Beneficis = 89422.14000000022Movimiento 428 702 Coste(10847.192000000001) ---> BoarHat@2c8619a9
+Beneficis = 89422.14000000022Movimiento 33 789 Coste(10836.488) ---> BoarHat@416c84bb
+Beneficis = 89144.24000000022Movimiento 492 900 Coste(10825.808) ---> BoarHat@5342db20
+Beneficis = 89144.24000000022Movimiento 672 881 Coste(10815.2) ---> BoarHat@7dd7841f
+Beneficis = 89144.24000000022Movimiento 866 882 Coste(10804.635) ---> BoarHat@5f4813cd
+Beneficis = 89144.24000000022Movimiento 295 469 Coste(10794.23) ---> BoarHat@2ef80ff9
+Beneficis = 89144.24000000022Movimiento 105 348 Coste(10783.946) ---> BoarHat@41ad526c
+Beneficis = 89144.24000000022Movimiento 35 812 Coste(10773.729) ---> BoarHat@3df5dd85
+Beneficis = 88894.1900000002Movimiento 307 809 Coste(10763.553) ---> BoarHat@43a77bda
+Beneficis = 88894.1900000002Movimiento 325 773 Coste(10753.862000000001) ---> BoarHat@4c893139
+Beneficis = 88894.1900000002Movimiento 99 680 Coste(10744.303) ---> BoarHat@c86911c
+Beneficis = 88894.1900000002Movimiento 92 948 Coste(10734.91) ---> BoarHat@6ac3d991
+Beneficis = 88894.1900000002Movimiento 71 458 Coste(10725.564) ---> BoarHat@7cfb6d76
+Beneficis = 88717.9400000002Movimiento 29 629 Coste(10716.564) ---> BoarHat@9092155
+Beneficis = 88717.9400000002Movimiento 706 964 Coste(10707.579) ---> BoarHat@65de3217
+Beneficis = 88717.9400000002Movimiento 441 484 Coste(10698.767) ---> BoarHat@256925ff
+Beneficis = 88717.9400000002Movimiento 734 846 Coste(10690.472) ---> BoarHat@6fb173dd
+Beneficis = 88717.9400000002Movimiento 278 617 Coste(10683.092) ---> BoarHat@5e84a632
+Beneficis = 88717.9400000002Movimiento 753 794 Coste(10676.059) ---> BoarHat@1c1a64c6
+Beneficis = 88566.29000000024Movimiento 111 911 Coste(10669.076000000001) ---> BoarHat@6129a145
+Beneficis = 88566.29000000024Movimiento 198 852 Coste(10662.124) ---> BoarHat@4bfb6783
+Beneficis = 88566.29000000024Movimiento 195 836 Coste(10655.588) ---> BoarHat@6304e466
+Beneficis = 88566.29000000024Movimiento 305 535 Coste(10649.096) ---> BoarHat@791751e6
+Beneficis = 88566.29000000024Movimiento 573 741 Coste(10642.748) ---> BoarHat@2810f4f1
+Beneficis = 88566.29000000024Movimiento 717 928 Coste(10636.435) ---> BoarHat@2e07fa02
+Beneficis = 88566.29000000024Movimiento 509 733 Coste(10630.206) ---> BoarHat@7c9bf3ca
+Beneficis = 88437.14000000025Movimiento 129 634 Coste(10624.073) ---> BoarHat@429bafff
+Beneficis = 88437.14000000025Movimiento 24 897 Coste(10617.964) ---> BoarHat@647cf64f
+Beneficis = 88320.44000000026Movimiento 239 863 Coste(10611.944) ---> BoarHat@7ae11e2
+Beneficis = 88320.44000000026Movimiento 184 826 Coste(10606.144) ---> BoarHat@623b6d0
+Beneficis = 88320.44000000026Movimiento 108 356 Coste(10600.380000000001) ---> BoarHat@5e299caf
+Beneficis = 88320.44000000026Movimiento 369 413 Coste(10594.703000000001) ---> BoarHat@6b742549
+Beneficis = 88320.44000000026Movimiento 62 236 Coste(10589.077000000001) ---> BoarHat@5416ec23
+Beneficis = 88320.44000000026Movimiento 247 601 Coste(10583.529) ---> BoarHat@5316324a
+Beneficis = 88320.44000000026Movimiento 268 532 Coste(10578.08) ---> BoarHat@7c2d8904
+Beneficis = 88320.44000000026Movimiento 277 481 Coste(10572.641) ---> BoarHat@7dd65b41
+Beneficis = 88207.64000000028Movimiento 133 562 Coste(10567.449) ---> BoarHat@280089d
+Beneficis = 88207.64000000028Movimiento 5 502 Coste(10562.285) ---> BoarHat@47cc5ca3
+Beneficis = 88207.64000000028Movimiento 518 818 Coste(10557.130000000001) ---> BoarHat@44302303
+Beneficis = 88207.64000000028Movimiento 205 673 Coste(10552.038) ---> BoarHat@3c1a1313
+Beneficis = 88207.64000000028Movimiento 655 739 Coste(10546.978000000001) ---> BoarHat@40db81c7
+Beneficis = 88207.64000000028Movimiento 15 250 Coste(10541.970000000001) ---> BoarHat@2b9ec48e
+Beneficis = 88207.64000000028Movimiento 217 711 Coste(10537.008) ---> BoarHat@7ec9e604
+Beneficis = 88207.64000000028Movimiento 117 915 Coste(10532.104) ---> BoarHat@391e505e
+Beneficis = 88118.09000000029Movimiento 10 531 Coste(10527.28) ---> BoarHat@211d405b
+Beneficis = 88118.09000000029Movimiento 196 377 Coste(10522.53) ---> BoarHat@5da463a1
+Beneficis = 87981.24000000028Movimiento 235 647 Coste(10517.784) ---> BoarHat@226c35f1
+Beneficis = 87981.24000000028Movimiento 636 799 Coste(10513.04) ---> BoarHat@445d0b26
+Beneficis = 87896.59000000029Movimiento 181 974 Coste(10508.307) ---> BoarHat@62e68e67
+Beneficis = 87801.09000000026Movimiento 241 676 Coste(10503.579) ---> BoarHat@35d0528f
+Beneficis = 87801.09000000026Movimiento 479 862 Coste(10498.996) ---> BoarHat@2db5f2
+Beneficis = 87801.09000000026Movimiento 345 371 Coste(10494.517) ---> BoarHat@73a05496
+Beneficis = 87703.34000000023Movimiento 467 993 Coste(10490.054) ---> BoarHat@eb6b3e5
+Beneficis = 87703.34000000023Movimiento 818 942 Coste(10485.597) ---> BoarHat@7ec79edc
+Beneficis = 87703.34000000023Movimiento 608 692 Coste(10481.142) ---> BoarHat@7a6b509d
+Beneficis = 87583.74000000025Movimiento 246 874 Coste(10476.886) ---> BoarHat@1df0264d
+Beneficis = 87583.74000000025Movimiento 220 661 Coste(10472.688) ---> BoarHat@44f19872
+Beneficis = 87583.74000000025Movimiento 375 583 Coste(10468.497) ---> BoarHat@c260662
+Beneficis = 87583.74000000025Movimiento 499 958 Coste(10464.387) ---> BoarHat@6440a457
+Beneficis = 87583.74000000025Movimiento 572 593 Coste(10460.385) ---> BoarHat@a2e2b48
+Beneficis = 87583.74000000025Movimiento 115 884 Coste(10456.389) ---> BoarHat@50bc8bb0
+Beneficis = 87583.74000000025Movimiento 90 263 Coste(10452.461) ---> BoarHat@c3ac751
+Beneficis = 87583.74000000025Movimiento 223 773 Coste(10448.548999999999) ---> BoarHat@4b317a9b
+Beneficis = 87583.74000000025Movimiento 314 439 Coste(10443.167) ---> BoarHat@4eb4cf5b
+Beneficis = 87583.74000000025Movimiento 162 596 Coste(10439.343) ---> BoarHat@67ed54fa
+Beneficis = 87583.74000000025Movimiento 156 601 Coste(10435.528) ---> BoarHat@7b06e9db
+Beneficis = 87583.74000000025Movimiento 182 686 Coste(10431.746) ---> BoarHat@293b45a8
+Beneficis = 87496.34000000023Movimiento 159 963 Coste(10427.974) ---> BoarHat@4de916b2
+Beneficis = 87496.34000000023Movimiento 454 810 Coste(10424.251) ---> BoarHat@1460e922
+Beneficis = 87496.34000000023Movimiento 139 669 Coste(10420.568) ---> BoarHat@1fc5ae7
+Beneficis = 87420.79000000023Movimiento 285 811 Coste(10416.937) ---> BoarHat@13e949ff
+Beneficis = 87420.79000000023Movimiento 701 902 Coste(10413.381) ---> BoarHat@1a86b491
+Beneficis = 87420.79000000023Movimiento 67 292 Coste(10409.853) ---> BoarHat@7afe9c5b
+Beneficis = 87420.79000000023Movimiento 225 404 Coste(10406.422) ---> BoarHat@700dd2e6
+Beneficis = 87420.79000000023Movimiento 77 923 Coste(10403.004) ---> BoarHat@57c8f270
+Beneficis = 87420.79000000023Movimiento 210 747 Coste(10399.586) ---> BoarHat@31c60618
+Beneficis = 87420.79000000023Movimiento 465 599 Coste(10396.223) ---> BoarHat@3f45c196
+Beneficis = 87420.79000000023Movimiento 147 784 Coste(10392.873) ---> BoarHat@5cf4f57a
+Beneficis = 87420.79000000023Movimiento 142 335 Coste(10389.525) ---> BoarHat@c263f6b
+Beneficis = 87420.79000000023Movimiento 455 473 Coste(10386.229) ---> BoarHat@34773f84
+Beneficis = 87420.79000000023Movimiento 942 953 Coste(10382.968) ---> BoarHat@664c7d0e
+Beneficis = 87318.64000000023Movimiento 315 904 Coste(10379.724) ---> BoarHat@29e8a68d
+Beneficis = 87214.24000000024Movimiento 445 870 Coste(10376.484) ---> BoarHat@1ede6abd
+Beneficis = 87214.24000000024Movimiento 457 983 Coste(10373.28) ---> BoarHat@30bf887f
+Beneficis = 87214.24000000024Movimiento 42 267 Coste(10370.088) ---> BoarHat@5d8bf767
+Beneficis = 87214.24000000024Movimiento 186 456 Coste(10366.903) ---> BoarHat@24c2c7b
+Beneficis = 87214.24000000024Movimiento 231 834 Coste(10363.742) ---> BoarHat@3fba909
+Beneficis = 87166.29000000023Movimiento 431 635 Coste(10360.607) ---> BoarHat@6877258b
+Beneficis = 87166.29000000023Movimiento 252 921 Coste(10357.493) ---> BoarHat@67b1897f
+Beneficis = 87117.69000000022Movimiento 148 991 Coste(10354.413) ---> BoarHat@62062114
+Beneficis = 87117.69000000022Movimiento 51 806 Coste(10351.378) ---> BoarHat@168a2e8e
+Beneficis = 87004.29000000023Movimiento 164 735 Coste(10348.354) ---> BoarHat@74519a26
+Beneficis = 87004.29000000023Movimiento 592 737 Coste(10345.348) ---> BoarHat@6cdc5bcf
+Beneficis = 87004.29000000023Movimiento 627 819 Coste(10342.408) ---> BoarHat@737759cc
+Beneficis = 87004.29000000023Movimiento 74 332 Coste(10339.483) ---> BoarHat@6120e07c
+Beneficis = 87004.29000000023Movimiento 442 452 Coste(10336.559) ---> BoarHat@7401b8ee
+Beneficis = 87004.29000000023Movimiento 567 707 Coste(10333.65) ---> BoarHat@54257edc
+Beneficis = 87004.29000000023Movimiento 65 113 Coste(10330.772) ---> BoarHat@5fff3242
+Beneficis = 86934.54000000023Movimiento 124 587 Coste(10327.922) ---> BoarHat@4022302d
+Beneficis = 86934.54000000023Movimiento 106 659 Coste(10325.1) ---> BoarHat@4f501d69
+Beneficis = 86934.54000000023Movimiento 122 807 Coste(10322.283) ---> BoarHat@19284c92
+Beneficis = 86934.54000000023Movimiento 426 731 Coste(10319.475) ---> BoarHat@2586e2b8
+Beneficis = 86934.54000000023Movimiento 425 829 Coste(10316.701000000001) ---> BoarHat@484aeda5
+Beneficis = 86832.3900000002Movimiento 308 816 Coste(10313.977) ---> BoarHat@34dafcca
+Beneficis = 86832.3900000002Movimiento 172 323 Coste(10311.263) ---> BoarHat@2286acc2
+Beneficis = 86749.74000000021Movimiento 407 927 Coste(10308.563) ---> BoarHat@3c022f3c
+Beneficis = 86749.74000000021Movimiento 390 970 Coste(10305.891) ---> BoarHat@78d2a1b4
+Beneficis = 86749.74000000021Movimiento 125 914 Coste(10303.263) ---> BoarHat@4a4d41cf
+Beneficis = 86749.74000000021Movimiento 437 734 Coste(10300.639) ---> BoarHat@665f6923
+Beneficis = 86749.74000000021Movimiento 611 692 Coste(10298.058) ---> BoarHat@16e8e4b2
+Beneficis = 86686.99000000021Movimiento 54 549 Coste(10295.496000000001) ---> BoarHat@62cdfa82
+Beneficis = 86686.99000000021Movimiento 91 845 Coste(10292.967) ---> BoarHat@2f9c1820
+Beneficis = 86686.99000000021Movimiento 700 952 Coste(10290.44) ---> BoarHat@1d990615
+Beneficis = 86686.99000000021Movimiento 34 948 Coste(10287.931) ---> BoarHat@6bb5ac2a
+Beneficis = 86686.99000000021Movimiento 479 897 Coste(10285.463) ---> BoarHat@1a3ecd10
+Beneficis = 86686.99000000021Movimiento 336 370 Coste(10283.007) ---> BoarHat@121d045f
+Beneficis = 86686.99000000021Movimiento 289 496 Coste(10280.558) ---> BoarHat@1aab8ed
+Beneficis = 86686.99000000021Movimiento 151 657 Coste(10278.141) ---> BoarHat@1bd56d92
+Beneficis = 86686.99000000021Movimiento 604 994 Coste(10275.743) ---> BoarHat@1951dd68
+Beneficis = 86686.99000000021Movimiento 53 313 Coste(10273.356) ---> BoarHat@10424cb8
+Beneficis = 86686.99000000021Movimiento 420 720 Coste(10270.970000000001) ---> BoarHat@35093ecf
+Beneficis = 86686.99000000021Movimiento 6 429 Coste(10268.609) ---> BoarHat@6ec36b62
+Beneficis = 86686.99000000021Movimiento 206 269 Coste(10266.266) ---> BoarHat@29758144
+Beneficis = 86591.1400000002Movimiento 316 879 Coste(10263.923) ---> BoarHat@63401b3a
+Beneficis = 86527.49000000018Movimiento 131 946 Coste(10261.583) ---> BoarHat@70f6abe0
+Beneficis = 86527.49000000018Movimiento 497 906 Coste(10259.323) ---> BoarHat@ac517bb
+Beneficis = 86527.49000000018Movimiento 399 685 Coste(10257.088) ---> BoarHat@21533c92
+Beneficis = 86527.49000000018Movimiento 564 662 Coste(10254.884) ---> BoarHat@3022f624
+Beneficis = 86527.49000000018Movimiento 311 945 Coste(10252.684000000001) ---> BoarHat@15eff2b4
+Beneficis = 86527.49000000018Movimiento 97 280 Coste(10250.499) ---> BoarHat@5a27321b
+Beneficis = 86527.49000000018Movimiento 4 317 Coste(10248.323) ---> BoarHat@4901efd0
+Beneficis = 86527.49000000018Movimiento 719 770 Coste(10246.18) ---> BoarHat@68809c45
+Beneficis = 86481.24000000015Movimiento 120 827 Coste(10244.038) ---> BoarHat@7a7f40ba
+Beneficis = 86481.24000000015Movimiento 610 823 Coste(10241.898) ---> BoarHat@6c54e6c6
+Beneficis = 86481.24000000015Movimiento 453 782 Coste(10239.762) ---> BoarHat@6425fe56
+Beneficis = 86481.24000000015Movimiento 774 901 Coste(10237.69) ---> BoarHat@a70166c
+Beneficis = 86481.24000000015Movimiento 271 454 Coste(10235.661) ---> BoarHat@bc26fe2
+Beneficis = 86481.24000000015Movimiento 208 551 Coste(10233.639) ---> BoarHat@151eb766
+Beneficis = 86481.24000000015Movimiento 296 338 Coste(10231.631) ---> BoarHat@647ea9fc
+Beneficis = 86481.24000000015Movimiento 864 881 Coste(10229.409) ---> BoarHat@c3946d8
+Beneficis = 86481.24000000015Movimiento 443 577 Coste(10226.915) ---> BoarHat@54922bcb
+Beneficis = 86481.24000000015Movimiento 3 483 Coste(10224.935) ---> BoarHat@51936cb9
+Beneficis = 86481.24000000015Movimiento 411 867 Coste(10222.979) ---> BoarHat@6d7a5d54
+Beneficis = 86481.24000000015Movimiento 404 886 Coste(10221.059) ---> BoarHat@2b93518d
+Beneficis = 86481.24000000015Movimiento 201 526 Coste(10219.143) ---> BoarHat@57668970
+Beneficis = 86481.24000000015Movimiento 61 658 Coste(10217.24) ---> BoarHat@41a3f05a
+Beneficis = 86481.24000000015Movimiento 566 934 Coste(10215.348) ---> BoarHat@96f0beb
+Beneficis = 86436.09000000019Movimiento 523 639 Coste(10213.488) ---> BoarHat@811c43f
+Beneficis = 86436.09000000019Movimiento 688 937 Coste(10211.629) ---> BoarHat@5082c957
+Beneficis = 86436.09000000019Movimiento 49 211 Coste(10209.779) ---> BoarHat@5f7f4207
+Beneficis = 86436.09000000019Movimiento 331 341 Coste(10207.935) ---> BoarHat@7c5779c7
+Beneficis = 86436.09000000019Movimiento 298 433 Coste(10206.096) ---> BoarHat@5b51318f
+Beneficis = 86414.04000000017Movimiento 383 638 Coste(10204.266) ---> BoarHat@bdf343e
+Beneficis = 86414.04000000017Movimiento 152 909 Coste(10202.439) ---> BoarHat@13f5fdae
+Beneficis = 86414.04000000017Movimiento 391 747 Coste(10200.613) ---> BoarHat@60f1103
+Beneficis = 86414.04000000017Movimiento 664 804 Coste(10198.794) ---> BoarHat@8703691
+Beneficis = 86414.04000000017Movimiento 615 730 Coste(10196.877) ---> BoarHat@7a485a86
+Beneficis = 86414.04000000017Movimiento 558 917 Coste(10195.068) ---> BoarHat@488a565c
+Beneficis = 86414.04000000017Movimiento 169 463 Coste(10193.268) ---> BoarHat@7009a390
+Beneficis = 86414.04000000017Movimiento 576 846 Coste(10191.47) ---> BoarHat@c7bc171
+Beneficis = 86414.04000000017Movimiento 118 501 Coste(10189.686) ---> BoarHat@62ab73d7
+Beneficis = 86414.04000000017Movimiento 665 922 Coste(10187.908) ---> BoarHat@2a9a0680
+Beneficis = 86357.34000000016Movimiento 440 591 Coste(10186.135) ---> BoarHat@79fd57e5
+Beneficis = 86357.34000000016Movimiento 199 907 Coste(10184.385) ---> BoarHat@2dd28167
+Beneficis = 86357.34000000016Movimiento 357 936 Coste(10182.639) ---> BoarHat@6750eb92
+Beneficis = 86357.34000000016Movimiento 174 722 Coste(10180.896999999999) ---> BoarHat@53a52162
+Beneficis = 86357.34000000016Movimiento 514 912 Coste(10179.157) ---> BoarHat@33f4dae4
+Beneficis = 86357.34000000016Movimiento 242 690 Coste(10177.440999999999) ---> BoarHat@2dff34db
+Beneficis = 86357.34000000016Movimiento 674 693 Coste(10175.725) ---> BoarHat@49964194
+Beneficis = 86357.34000000016Movimiento 16 442 Coste(10174.015) ---> BoarHat@3df27fe9
+Beneficis = 86357.34000000016Movimiento 98 353 Coste(10172.331) ---> BoarHat@35426edb
+Beneficis = 86357.34000000016Movimiento 284 475 Coste(10170.681) ---> BoarHat@67d0ae9c
+Beneficis = 86336.89000000014Movimiento 320 559 Coste(10169.054) ---> BoarHat@121eee7b
+Beneficis = 86336.89000000014Movimiento 249 494 Coste(10167.455) ---> BoarHat@2167dd0c
+Beneficis = 86336.89000000014Movimiento 38 135 Coste(10165.877) ---> BoarHat@49712709
+Beneficis = 86336.89000000014Movimiento 24 163 Coste(10164.305) ---> BoarHat@2e362489
+Beneficis = 86336.89000000014Movimiento 786 859 Coste(10162.744) ---> BoarHat@acb683f
+Beneficis = 86336.89000000014Movimiento 9 657 Coste(10161.185) ---> BoarHat@1278b27b
+Beneficis = 86336.89000000014Movimiento 851 998 Coste(10159.637) ---> BoarHat@19d7fc65
+Beneficis = 86336.89000000014Movimiento 146 461 Coste(10158.085) ---> BoarHat@77415203
+Beneficis = 86336.89000000014Movimiento 256 536 Coste(10156.539) ---> BoarHat@1f7f6bd
+Beneficis = 86318.49000000015Movimiento 90 542 Coste(10155.04) ---> BoarHat@3e63be62
+Beneficis = 86318.49000000015Movimiento 312 868 Coste(10153.532) ---> BoarHat@2bbc7e46
+Beneficis = 86318.49000000015Movimiento 109 333 Coste(10152.046) ---> BoarHat@43d8839e
+Beneficis = 86299.74000000018Movimiento 373 640 Coste(10150.567) ---> BoarHat@7f91cb1a
+Beneficis = 86299.74000000018Movimiento 342 978 Coste(10149.093) ---> BoarHat@26dd1d67
+Beneficis = 86299.74000000018Movimiento 176 602 Coste(10147.641) ---> BoarHat@14ca9e0d
+Beneficis = 86299.74000000018Movimiento 0 25 Coste(10146.202) ---> BoarHat@3f188e3f
+Beneficis = 86299.74000000018Movimiento 380 490 Coste(10144.791) ---> BoarHat@5957ffee
+Beneficis = 86299.74000000018Movimiento 413 493 Coste(10143.397) ---> BoarHat@691c9e43
+Beneficis = 86299.74000000018Movimiento 421 721 Coste(10142.007) ---> BoarHat@28b5bf4c
+Beneficis = 86299.74000000018Movimiento 175 898 Coste(10140.625) ---> BoarHat@2f62473
+Beneficis = 86299.74000000018Movimiento 517 885 Coste(10139.255) ---> BoarHat@371b3ead
+Beneficis = 86299.74000000018Movimiento 384 743 Coste(10137.887) ---> BoarHat@3d94607b
+Beneficis = 86299.74000000018Movimiento 144 848 Coste(10136.530999999999) ---> BoarHat@5a2fe786
+Beneficis = 86299.74000000018Movimiento 309 577 Coste(10135.185) ---> BoarHat@3e106381
+Beneficis = 86299.74000000018Movimiento 769 931 Coste(10133.857) ---> BoarHat@298e445b
+Beneficis = 86299.74000000018Movimiento 613 884 Coste(10132.530999999999) ---> BoarHat@2ff31bb7
+Beneficis = 86299.74000000018Movimiento 812 896 Coste(10131.216) ---> BoarHat@5be71ec9
+Beneficis = 86299.74000000018Movimiento 141 604 Coste(10129.913) ---> BoarHat@6a5b7cae
+Beneficis = 86299.74000000018Movimiento 18 929 Coste(10128.668) ---> BoarHat@4725dbdd
+Beneficis = 86299.74000000018Movimiento 843 985 Coste(10127.425) ---> BoarHat@44862e24
+Beneficis = 86299.74000000018Movimiento 264 546 Coste(10126.191) ---> BoarHat@448860fe
+Beneficis = 86299.74000000018Movimiento 58 840 Coste(10124.963) ---> BoarHat@2ebd7c81
+Beneficis = 86299.74000000018Movimiento 498 979 Coste(10123.737000000001) ---> BoarHat@6351703f
+Beneficis = 86299.74000000018Movimiento 112 481 Coste(10122.529) ---> BoarHat@18cfc538
+Beneficis = 86299.74000000018Movimiento 740 924 Coste(10121.323) ---> BoarHat@4c677b8c
+Beneficis = 86299.74000000018Movimiento 781 820 Coste(10120.136) ---> BoarHat@3fbb6ba7
+Beneficis = 86299.74000000018Movimiento 262 424 Coste(10118.954) ---> BoarHat@c1f215e
+Beneficis = 86299.74000000018Movimiento 183 243 Coste(10117.774) ---> BoarHat@45548a0b
+Beneficis = 86299.74000000018Movimiento 173 668 Coste(10116.601999999999) ---> BoarHat@77283087
+Beneficis = 86299.74000000018Movimiento 550 920 Coste(10115.456) ---> BoarHat@2982d2bf
+Beneficis = 86253.39000000014Movimiento 122 605 Coste(10114.323) ---> BoarHat@5e198a58
+Beneficis = 86253.39000000014Movimiento 161 854 Coste(10113.191) ---> BoarHat@2843b72c
+Beneficis = 86253.39000000014Movimiento 470 636 Coste(10112.077) ---> BoarHat@4b2f6c3f
+Beneficis = 86225.04000000017Movimiento 179 987 Coste(10110.966) ---> BoarHat@2251ecc0
+Beneficis = 86225.04000000017Movimiento 215 226 Coste(10109.881) ---> BoarHat@3a7e85f7
+Beneficis = 86225.04000000017Movimiento 507 624 Coste(10108.806) ---> BoarHat@72df4f13
+Beneficis = 86225.04000000017Movimiento 739 744 Coste(10107.737000000001) ---> BoarHat@46b4a29
+Beneficis = 86225.04000000017Movimiento 378 379 Coste(10106.671) ---> BoarHat@16f85d30
+Beneficis = 86225.04000000017Movimiento 258 677 Coste(10105.611) ---> BoarHat@35f84a39
+Beneficis = 86225.04000000017Movimiento 158 774 Coste(10104.552) ---> BoarHat@158a6995
+Beneficis = 86225.04000000017Movimiento 408 474 Coste(10103.499) ---> BoarHat@2175f41d
+Beneficis = 86225.04000000017Movimiento 549 726 Coste(10102.468) ---> BoarHat@1e18f245
+Beneficis = 86225.04000000017Movimiento 202 452 Coste(10101.442) ---> BoarHat@5cd02661
+Beneficis = 86225.04000000017Movimiento 202 718 Coste(10100.416) ---> BoarHat@2b87c506
+Beneficis = 86225.04000000017Movimiento 228 663 Coste(10099.39) ---> BoarHat@70dd118c
+Beneficis = 86225.04000000017Movimiento 238 776 Coste(10098.392) ---> BoarHat@12327f29
+Beneficis = 86225.04000000017Movimiento 170 724 Coste(10097.187) ---> BoarHat@5833e578
+Beneficis = 86225.04000000017Movimiento 418 503 Coste(10096.196) ---> BoarHat@45f930dd
+Beneficis = 86225.04000000017Movimiento 104 363 Coste(10095.211) ---> BoarHat@3decc7d0
+Beneficis = 86225.04000000017Movimiento 9 499 Coste(10094.231) ---> BoarHat@7f75418a
+Beneficis = 86225.04000000017Movimiento 294 432 Coste(10093.253) ---> BoarHat@3812f0db
+Beneficis = 86225.04000000017Movimiento 419 529 Coste(10092.291000000001) ---> BoarHat@60562a6a
+Beneficis = 86225.04000000017Movimiento 140 510 Coste(10091.34) ---> BoarHat@76daa528
+Beneficis = 86225.04000000017Movimiento 738 959 Coste(10090.399000000001) ---> BoarHat@57d63781
+Beneficis = 86225.04000000017Movimiento 200 438 Coste(10089.462) ---> BoarHat@3a8bb233
+Beneficis = 86225.04000000017Movimiento 55 459 Coste(10088.534) ---> BoarHat@966be34
+Beneficis = 86225.04000000017Movimiento 288 620 Coste(10087.606) ---> BoarHat@5b0cf8b4
+Beneficis = 86225.04000000017Movimiento 99 945 Coste(10086.691) ---> BoarHat@480ea946
+Beneficis = 86225.04000000017Movimiento 447 477 Coste(10085.779) ---> BoarHat@241d9977
+Beneficis = 86225.04000000017Movimiento 47 956 Coste(10084.874) ---> BoarHat@4337cc7f
+Beneficis = 86225.04000000017Movimiento 80 892 Coste(10083.970000000001) ---> BoarHat@5a876f8f
+Beneficis = 86225.04000000017Movimiento 157 795 Coste(10083.066) ---> BoarHat@67cffc63
+Beneficis = 86225.04000000017Movimiento 771 791 Coste(10082.163) ---> BoarHat@725f3a3e
+Beneficis = 86225.04000000017Movimiento 143 396 Coste(10081.289) ---> BoarHat@16b49f72
+Beneficis = 86225.04000000017Movimiento 107 669 Coste(10080.425000000001) ---> BoarHat@20155407
+Beneficis = 86225.04000000017Movimiento 51 221 Coste(10079.568) ---> BoarHat@69740db5
+Beneficis = 86225.04000000017Movimiento 351 527 Coste(10078.717) ---> BoarHat@797091
+Beneficis = 86225.04000000017Movimiento 31 155 Coste(10077.871000000001) ---> BoarHat@2ada0d52
+Beneficis = 86225.04000000017Movimiento 227 460 Coste(10077.027) ---> BoarHat@7e2ad836
+Beneficis = 86225.04000000017Movimiento 253 887 Coste(10076.184000000001) ---> BoarHat@b7d4075
+Beneficis = 86225.04000000017Movimiento 522 861 Coste(10075.346) ---> BoarHat@4e1062d5
+Beneficis = 86188.14000000014Movimiento 106 779 Coste(10074.526) ---> BoarHat@43416dc8
+Beneficis = 86188.14000000014Movimiento 257 650 Coste(10073.706) ---> BoarHat@4cd041e4
+Beneficis = 86188.14000000014Movimiento 355 754 Coste(10072.903) ---> BoarHat@2787223e
+Beneficis = 86188.14000000014Movimiento 504 880 Coste(10072.104) ---> BoarHat@13050401
+Beneficis = 86188.14000000014Movimiento 326 632 Coste(10071.313) ---> BoarHat@f67e1ae
+Beneficis = 86188.14000000014Movimiento 584 966 Coste(10070.523000000001) ---> BoarHat@21047521
+Beneficis = 86188.14000000014Movimiento 134 614 Coste(10069.746000000001) ---> BoarHat@679ff157
+Beneficis = 86188.14000000014Movimiento 325 435 Coste(10068.972) ---> BoarHat@3f213e51
+Beneficis = 86188.14000000014Movimiento 128 745 Coste(10068.204) ---> BoarHat@79fce111
+Beneficis = 86188.14000000014Movimiento 822 874 Coste(10067.438) ---> BoarHat@2bc8b8c1
+Beneficis = 86188.14000000014Movimiento 525 986 Coste(10066.676) ---> BoarHat@2402655f
+Beneficis = 86188.14000000014Movimiento 261 390 Coste(10065.919) ---> BoarHat@1f9030a5
+Beneficis = 86188.14000000014Movimiento 13 644 Coste(10065.167000000001) ---> BoarHat@a237491
+Beneficis = 86188.14000000014Movimiento 98 444 Coste(10064.415) ---> BoarHat@33bb5cdb
+Beneficis = 86188.14000000014Movimiento 365 766 Coste(10063.669) ---> BoarHat@41245a98
+Beneficis = 86188.14000000014Movimiento 132 213 Coste(10062.931) ---> BoarHat@5c116d4c
+Beneficis = 86188.14000000014Movimiento 674 835 Coste(10062.197) ---> BoarHat@63739bc2
+Beneficis = 86188.14000000014Movimiento 827 914 Coste(10061.464) ---> BoarHat@608379d8
+Beneficis = 86188.14000000014Movimiento 20 236 Coste(10060.74) ---> BoarHat@3f3369cc
+Beneficis = 86188.14000000014Movimiento 777 782 Coste(10060.021) ---> BoarHat@57011a41
+Beneficis = 86188.14000000014Movimiento 66 794 Coste(10059.309000000001) ---> BoarHat@56a55754
+Beneficis = 86188.14000000014Movimiento 242 255 Coste(10058.599) ---> BoarHat@597ef409
+Beneficis = 86188.14000000014Movimiento 89 520 Coste(10057.89) ---> BoarHat@6b35ca4b
+Beneficis = 86188.14000000014Movimiento 623 992 Coste(10057.183) ---> BoarHat@2096d11d
+Beneficis = 86188.14000000014Movimiento 123 279 Coste(10056.486) ---> BoarHat@6de63b6d
+Beneficis = 86188.14000000014Movimiento 925 971 Coste(10055.79) ---> BoarHat@96dc678
+Beneficis = 86188.14000000014Movimiento 45 64 Coste(10055.095000000001) ---> BoarHat@5c91122e
+Beneficis = 86188.14000000014Movimiento 83 957 Coste(10054.403) ---> BoarHat@5283e04d
+Beneficis = 86188.14000000014Movimiento 402 603 Coste(10053.725) ---> BoarHat@3135ee91
+Beneficis = 86188.14000000014Movimiento 422 790 Coste(10053.048) ---> BoarHat@2220a9f8
+Beneficis = 86188.14000000014Movimiento 237 973 Coste(10052.372000000001) ---> BoarHat@218ec49c
+Beneficis = 86188.14000000014Movimiento 416 647 Coste(10051.696) ---> BoarHat@728c4e72
+Beneficis = 86188.14000000014Movimiento 138 588 Coste(10051.025000000001) ---> BoarHat@404df50
+Beneficis = 86188.14000000014Movimiento 21 434 Coste(10050.356) ---> BoarHat@13dfbd01
+Beneficis = 86188.14000000014Movimiento 193 803 Coste(10049.699) ---> BoarHat@275f6be1
+Beneficis = 86188.14000000014Movimiento 612 675 Coste(10049.055) ---> BoarHat@6c30f5eb
+Beneficis = 86188.14000000014Movimiento 381 755 Coste(10048.412) ---> BoarHat@7fa9140e
+Beneficis = 86188.14000000014Movimiento 68 476 Coste(10047.772) ---> BoarHat@6cd445e9
+Beneficis = 86172.39000000014Movimiento 74 793 Coste(10047.137) ---> BoarHat@2ae0fb55
+Beneficis = 86172.39000000014Movimiento 39 976 Coste(10046.504) ---> BoarHat@5494730b
+Beneficis = 86172.39000000014Movimiento 679 996 Coste(10045.876) ---> BoarHat@1e8c4ed2
+Beneficis = 86172.39000000014Movimiento 165 891 Coste(10045.259) ---> BoarHat@44562175
+Beneficis = 86172.39000000014Movimiento 274 290 Coste(10044.647) ---> BoarHat@656ef52a
+Beneficis = 86172.39000000014Movimiento 544 735 Coste(10044.046) ---> BoarHat@531d0c5d
+Beneficis = 86172.39000000014Movimiento 207 382 Coste(10043.446) ---> BoarHat@2cb3d8d3
+Beneficis = 86172.39000000014Movimiento 491 928 Coste(10042.85) ---> BoarHat@464b6f5d
+Beneficis = 86172.39000000014Movimiento 579 833 Coste(10042.271) ---> BoarHat@1cf8f391
+Beneficis = 86172.39000000014Movimiento 145 234 Coste(10041.703) ---> BoarHat@6041994f
+Beneficis = 86172.39000000014Movimiento 35 545 Coste(10041.151) ---> BoarHat@4eb26d5
+Beneficis = 86172.39000000014Movimiento 150 540 Coste(10040.6) ---> BoarHat@6fa86996
+Beneficis = 86172.39000000014Movimiento 487 633 Coste(10040.055) ---> BoarHat@41c447fe
+Beneficis = 86172.39000000014Movimiento 73 589 Coste(10039.515) ---> BoarHat@448d3f8d
+Beneficis = 86172.39000000014Movimiento 347 933 Coste(10038.976) ---> BoarHat@acb2424
+Beneficis = 86172.39000000014Movimiento 244 951 Coste(10038.438) ---> BoarHat@34f674c2
+Beneficis = 86172.39000000014Movimiento 254 802 Coste(10037.902) ---> BoarHat@3076b4f8
+Beneficis = 86172.39000000014Movimiento 160 860 Coste(10037.383) ---> BoarHat@5ab61503
+Beneficis = 86172.39000000014Movimiento 250 899 Coste(10036.865) ---> BoarHat@66a2cf05
+Beneficis = 86172.39000000014Movimiento 412 899 Coste(10035.834) ---> BoarHat@4209f16e
+Beneficis = 86172.39000000014Movimiento 302 813 Coste(10035.32) ---> BoarHat@73bd1f51
+Beneficis = 86172.39000000014Movimiento 401 448 Coste(10034.806) ---> BoarHat@7e54b27
+Beneficis = 86172.39000000014Movimiento 245 372 Coste(10034.295) ---> BoarHat@6bff3f06
+Beneficis = 86172.39000000014Movimiento 324 913 Coste(10033.808) ---> BoarHat@4b481fa6
+Beneficis = 86172.39000000014Movimiento 157 817 Coste(10033.328000000001) ---> BoarHat@5e828748
+Beneficis = 86172.39000000014Movimiento 455 669 Coste(10032.85) ---> BoarHat@3ab76b4c
+Beneficis = 86172.39000000014Movimiento 260 853 Coste(10032.376) ---> BoarHat@7a1e6a94
+Beneficis = 86172.39000000014Movimiento 26 217 Coste(10031.911) ---> BoarHat@57ef8ff2
+Beneficis = 86172.39000000014Movimiento 229 780 Coste(10031.45) ---> BoarHat@86bf213
+Beneficis = 86172.39000000014Movimiento 2 9 Coste(10030.992) ---> BoarHat@2a821667
+Beneficis = 86172.39000000014Movimiento 344 634 Coste(10030.537) ---> BoarHat@50a9384e
+Beneficis = 86172.39000000014Movimiento 312 393 Coste(10030.103) ---> BoarHat@42e18ad
+Beneficis = 86172.39000000014Movimiento 216 270 Coste(10029.676) ---> BoarHat@6b1d0ddb
+Beneficis = 86172.39000000014Movimiento 151 880 Coste(10029.253) ---> BoarHat@4826a9d4
+Beneficis = 86172.39000000014Movimiento 69 339 Coste(10028.841) ---> BoarHat@9d21509
+Beneficis = 86172.39000000014Movimiento 319 449 Coste(10028.431) ---> BoarHat@485a79f7
+Beneficis = 86172.39000000014Movimiento 233 301 Coste(10028.032) ---> BoarHat@5365119b
+Beneficis = 86172.39000000014Movimiento 645 725 Coste(10027.644) ---> BoarHat@4accb04e
+Beneficis = 86172.39000000014Movimiento 85 303 Coste(10027.257) ---> BoarHat@69e3982a
+Beneficis = 86172.39000000014Movimiento 204 926 Coste(10026.877) ---> BoarHat@87cb560
+Beneficis = 86172.39000000014Movimiento 318 350 Coste(10026.497) ---> BoarHat@5c6c80bf
+Beneficis = 86172.39000000014Movimiento 83 969 Coste(10026.129) ---> BoarHat@359b5ae1
+Beneficis = 86172.39000000014Movimiento 36 632 Coste(10025.723) ---> BoarHat@229a7874
+Beneficis = 86172.39000000014Movimiento 451 580 Coste(10025.361) ---> BoarHat@2c2a1a68
+Beneficis = 86172.39000000014Movimiento 7 841 Coste(10025.007) ---> BoarHat@6b551222
+Beneficis = 86172.39000000014Movimiento 349 630 Coste(10024.657) ---> BoarHat@11d36233
+Beneficis = 86172.39000000014Movimiento 414 656 Coste(10024.309) ---> BoarHat@10f05296
+Beneficis = 86172.39000000014Movimiento 240 997 Coste(10023.961) ---> BoarHat@78e95e69
+Beneficis = 86172.39000000014Movimiento 126 135 Coste(10023.619) ---> BoarHat@7fedf96b
+Beneficis = 86172.39000000014Movimiento 574 940 Coste(10023.28) ---> BoarHat@737e1457
+Beneficis = 86172.39000000014Movimiento 639 863 Coste(10022.942) ---> BoarHat@7e3253fd
+Beneficis = 86172.39000000014Movimiento 180 271 Coste(10022.608) ---> BoarHat@21f5cebf
+Beneficis = 86172.39000000014Movimiento 297 554 Coste(10022.278) ---> BoarHat@7c4dba63
+Beneficis = 86172.39000000014Movimiento 698 760 Coste(10021.968) ---> BoarHat@24453f76
+Beneficis = 86172.39000000014Movimiento 752 916 Coste(10021.663) ---> BoarHat@6b8da8d6
+Beneficis = 86172.39000000014Movimiento 303 519 Coste(10021.362000000001) ---> BoarHat@7c229b18
+Beneficis = 86172.39000000014Movimiento 156 266 Coste(10021.062) ---> BoarHat@31fc0e2a
+Beneficis = 86172.39000000014Movimiento 105 266 Coste(10020.762) ---> BoarHat@5fdb8b36
+Beneficis = 86172.39000000014Movimiento 500 981 Coste(10020.462) ---> BoarHat@2c26c50d
+Beneficis = 86172.39000000014Movimiento 273 955 Coste(10020.164) ---> BoarHat@40c1a023
+Beneficis = 86172.39000000014Movimiento 195 893 Coste(10019.867) ---> BoarHat@6c07a75f
+Beneficis = 86172.39000000014Movimiento 76 808 Coste(10019.571) ---> BoarHat@6fd241fe
+Beneficis = 86172.39000000014Movimiento 503 703 Coste(10019.275) ---> BoarHat@33f005ca
+Beneficis = 86172.39000000014Movimiento 41 782 Coste(10018.985) ---> BoarHat@142a3c26
+Beneficis = 86172.39000000014Movimiento 47 810 Coste(10018.699) ---> BoarHat@2de1171b
+Beneficis = 86172.39000000014Movimiento 190 862 Coste(10018.02) ---> BoarHat@440fb51d
+Beneficis = 86172.39000000014Movimiento 473 495 Coste(10017.654) ---> BoarHat@2bdaefc7
+Beneficis = 86172.39000000014Movimiento 50 274 Coste(10017.368) ---> BoarHat@439bcc43
+Beneficis = 86172.39000000014Movimiento 374 792 Coste(10017.089) ---> BoarHat@54d44442
+Beneficis = 86172.39000000014Movimiento 464 688 Coste(10016.810000000001) ---> BoarHat@40971306
+Beneficis = 86172.39000000014Movimiento 88 607 Coste(10016.533) ---> BoarHat@24bd89fd
+Beneficis = 86172.39000000014Movimiento 225 730 Coste(10016.256) ---> BoarHat@7e3fe397
+Beneficis = 86172.39000000014Movimiento 329 938 Coste(10015.984) ---> BoarHat@452ad4c0
+Beneficis = 86172.39000000014Movimiento 371 786 Coste(10015.713) ---> BoarHat@384ac721
+Beneficis = 86172.39000000014Movimiento 277 815 Coste(10015.006000000001) ---> BoarHat@e1d70e2
+Beneficis = 86172.39000000014Movimiento 168 959 Coste(10014.739) ---> BoarHat@5630fa9b
+Beneficis = 86172.39000000014Movimiento 198 209 Coste(10014.475) ---> BoarHat@2730d271
+Beneficis = 86172.39000000014Movimiento 84 513 Coste(10014.219000000001) ---> BoarHat@5ef211d1
+Beneficis = 86172.39000000014Movimiento 217 252 Coste(10013.963) ---> BoarHat@42197ae7
+Beneficis = 86172.39000000014Movimiento 82 713 Coste(10013.711000000001) ---> BoarHat@718aa9a4
+Beneficis = 86172.39000000014Movimiento 352 385 Coste(10013.459) ---> BoarHat@6b24ea37
+Beneficis = 86172.39000000014Movimiento 453 848 Coste(10013.207) ---> BoarHat@50ecef2e
+Beneficis = 86172.39000000014Movimiento 460 658 Coste(10012.958) ---> BoarHat@6072577d
+Beneficis = 86172.39000000014Movimiento 715 814 Coste(10012.709) ---> BoarHat@95b3c3d
+Beneficis = 86172.39000000014Movimiento 902 991 Coste(10012.462) ---> BoarHat@50afdadf
+Beneficis = 86172.39000000014Movimiento 516 600 Coste(10012.216) ---> BoarHat@1561abc3
+Beneficis = 86172.39000000014Movimiento 18 737 Coste(10011.971000000001) ---> BoarHat@4455c80c
+Beneficis = 86172.39000000014Movimiento 205 378 Coste(10011.732) ---> BoarHat@628d0932
+Beneficis = 86172.39000000014Movimiento 178 982 Coste(10011.494) ---> BoarHat@bd807f1
+Beneficis = 86172.39000000014Movimiento 206 505 Coste(10011.262) ---> BoarHat@70760632
+Beneficis = 86172.39000000014Movimiento 408 673 Coste(10011.032000000001) ---> BoarHat@5a7478e6
+Beneficis = 86172.39000000014Movimiento 553 592 Coste(10010.802) ---> BoarHat@6bb3f513
+Beneficis = 86172.39000000014Movimiento 570 726 Coste(10010.581) ---> BoarHat@41c407cf
+Beneficis = 86172.39000000014Movimiento 165 357 Coste(10010.362000000001) ---> BoarHat@35b399f4
+Beneficis = 86172.39000000014Movimiento 100 683 Coste(10010.145) ---> BoarHat@7f68344a
+Beneficis = 86172.39000000014Movimiento 557 856 Coste(10009.929) ---> BoarHat@7f4a91c7
+Beneficis = 86172.39000000014Movimiento 96 540 Coste(10009.718) ---> BoarHat@3413c5a1
+Beneficis = 86172.39000000014Movimiento 37 865 Coste(10009.508) ---> BoarHat@3ede4e8f
+Beneficis = 86172.39000000014Movimiento 119 511 Coste(10009.303) ---> BoarHat@1c2f0afc
+Beneficis = 86172.39000000014Movimiento 531 758 Coste(10009.109) ---> BoarHat@12104c63
+Beneficis = 86172.39000000014Movimiento 272 356 Coste(10008.933) ---> BoarHat@1489d4a3
+Beneficis = 86172.39000000014Movimiento 14 60 Coste(10008.759) ---> BoarHat@5ca564a3
+Beneficis = 86172.39000000014Movimiento 77 192 Coste(10008.629) ---> BoarHat@67fc9683
+Beneficis = 86172.39000000014Movimiento 43 282 Coste(10008.503) ---> BoarHat@2953671a
+Beneficis = 86172.39000000014Movimiento 177 695 Coste(10008.387) ---> BoarHat@46221a57
+Beneficis = 86172.39000000014Movimiento 46 117 Coste(10008.282) ---> BoarHat@39a751d1
+Beneficis = 86169.69000000013Movimiento 91 106 Coste(10008.216) ---> BoarHat@52b8119c
+Beneficis = 86167.89000000014Movimiento 238 800 Coste(10008.168) ---> BoarHat@642b70df
+Beneficis = 86166.49000000015Movimiento 148 368 Coste(10008.128) ---> BoarHat@16ccd070
+nodesExpanded : 423
+Temps SolIni = 26 Tiempo HC = 187562 Tiempo SA = 0

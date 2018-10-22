@@ -20,9 +20,12 @@ import java.util.Date;
 public class CentralDemo {
 
     public static void main(String[] args){
+        int cP = Integer.valueOf(args[1]);
+        int cM = Integer.valueOf(args[2]);
+        int cG = Integer.valueOf(args[3]);
         int [] percent  = {5, 10, 25};
         int seedCent = Integer.valueOf(args[0]);
-        int ncli = 1000;
+        int ncli = Integer.valueOf(args[4]);
         double [] propc  = {0.25, 0.3, 0.45};
         double propg = 0.75;
 
